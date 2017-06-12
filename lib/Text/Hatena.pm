@@ -62,14 +62,14 @@ sub new {
     $opts{inlines}  ||= $INLINES;
 
     $opts{stash}    ||= {};
+    $opts{ua}       = do {
+      require LWP::UserAgent;
+      LWP::UserAgent->new;
+    } if not exists $opts{ua};
     $opts{cache}    ||= do {
       require Cache::MemoryCache;
       Cache::MemoryCache->new({namespace => __PACKAGE__});
-    };
-    $opts{ua}       ||= do {
-      require LWP::UserAgent;
-      LWP::UserAgent->new;
-    };
+    } if defined $opts{ua};
     $opts{lang}     ||= 'en';
 
     $opts{remove_comment}  //= 1;
