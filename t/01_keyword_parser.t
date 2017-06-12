@@ -24,7 +24,7 @@ subtest re => sub {
             '[-_-]' => '[-_-]',
         }
     );
-    is $parser->re, '\[\-_\-\]|\(\^_\^\)';
+    is $parser->re, '\(\^_\^\)|\[\-_\-\]';
 };
 
 done_testing;

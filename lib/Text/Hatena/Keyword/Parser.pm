@@ -19,7 +19,7 @@ sub initialize {
     $self->stack = {};
     $self->depth = 0;
     $self->words = $args{words} || {};
-    $self->re    = join '|', map { quotemeta } sort { length($b) <=> length($a) } keys %{$self->words || {}};
+    $self->re    = join '|', map { quotemeta } sort { length($b) <=> length($a) || $a cmp $b } keys %{$self->words || {}};
 }
 
 sub start {
