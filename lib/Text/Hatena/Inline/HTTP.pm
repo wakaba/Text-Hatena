@@ -9,7 +9,6 @@ use URI::Escape qw/uri_escape_utf8/;
 
 use Text::Hatena::Constants qw($URI_PATTERN);
 use Text::Hatena::Inline::DSL;
-use Text::Hatena::Embed;
 
 my $char_wp  = q{A-Za-z0-9\-\.~/_?&=%#+:;,\@'\$*!\(\)}; # with paren
 my $char_wop = q{A-Za-z0-9\-\.~/_?&=%#+:;,\@'\$*!};     # w/o  paren
@@ -236,11 +235,18 @@ sub movie_handler {
 
 sub embed_handler {
     my ($context, $uri, $link_target) = @_;
-    my $embed = Text::Hatena::Embed->new({
-        cache => $context->cache,
-        lang  => $context->lang,
-    });
-    $embed->render($uri) || sprintf(
+    return do {
+        if ($context->network_enabled) {
+            require Text::Hatena::Embed;
+            my $embed = Text::Hatena::Embed->new({
+                cache => $context->cache,
+                lang  => $context->lang,
+            });
+            $embed->render($uri);
+        } else {
+            undef;
+        }
+    } || sprintf(
         '<a href="%s"%s>%s</a>',
         $uri,
         $link_target,

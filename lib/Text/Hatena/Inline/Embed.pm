@@ -7,7 +7,6 @@ use warnings;
 # [tweet https://twitter.com/motemen/status/170055613668274177]
 
 use Text::Hatena::Inline::DSL;
-use Text::Hatena::Embed;
 
 build_inlines {
     syntax qr{
@@ -32,11 +31,18 @@ build_inlines {
 
         my $link_target = $context->link_target;
 
-        my $embed = Text::Hatena::Embed->new({
-            cache => $context->cache,
-            lang  => $lang || $context->lang,
-        });
-        $embed->render($uri) || sprintf(
+        return do {
+            if ($context->network_enabled) {
+                  require Text::Hatena::Embed;
+                  my $embed = Text::Hatena::Embed->new({
+                      cache => $context->cache,
+                      lang  => $lang || $context->lang,
+                  });
+                  $embed->render($uri);
+              } else {
+                  undef;
+              }
+        } || sprintf(
             '<a href="%s"%s>%s</a>',
             $uri,
             $link_target,
