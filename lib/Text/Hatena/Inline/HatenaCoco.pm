@@ -4,7 +4,6 @@ use strict;
 use warnings;
 use HTML::Entities;
 use JSON::XS;
-use LWP::UserAgent;
 
 use Text::Hatena::Constants qw($UNAME_PATTERN);
 use Text::Hatena::Inline::DSL;

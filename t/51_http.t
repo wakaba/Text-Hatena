@@ -6,6 +6,7 @@ use Test::Most;
 use Text::Hatena::Test;
 
 BEGIN {
+    require LWP::UserAgent;
     no warnings 'redefine';
     *LWP::UserAgent::request = sub {
         my($self, $req) = @_;

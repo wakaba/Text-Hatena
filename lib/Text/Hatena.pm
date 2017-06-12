@@ -64,7 +64,10 @@ sub new {
 
     $opts{stash}    ||= {};
     $opts{cache}    ||= Cache::MemoryCache->new({namespace => __PACKAGE__});
-    $opts{ua}       ||= LWP::UserAgent->new;
+    $opts{ua}       ||= do {
+      require LWP::UserAgent;
+      LWP::UserAgent->new;
+    };
     $opts{lang}     ||= 'en';
 
     $opts{remove_comment}  //= 1;
