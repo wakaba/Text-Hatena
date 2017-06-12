@@ -12,10 +12,6 @@ use Text::Hatena::Util;
 
 has 'cache' => (
     is => 'rw',
-    default => sub {
-        require Cache::MemoryCache;
-        Cache::MemoryCache->new({namespace => __PACKAGE__});
-    }
 );
 
 has 'lang' => (is => 'rw', default => 'en');

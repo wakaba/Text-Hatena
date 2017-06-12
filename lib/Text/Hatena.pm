@@ -5,7 +5,6 @@ use strict;
 use warnings;
 use parent qw(Text::Hatena::Context);
 use Carp;
-use Cache::MemoryCache;
 
 our $VERSION = '0.31';
 
@@ -63,7 +62,10 @@ sub new {
     $opts{inlines}  ||= $INLINES;
 
     $opts{stash}    ||= {};
-    $opts{cache}    ||= Cache::MemoryCache->new({namespace => __PACKAGE__});
+    $opts{cache}    ||= do {
+      require Cache::MemoryCache;
+      Cache::MemoryCache->new({namespace => __PACKAGE__});
+    };
     $opts{ua}       ||= do {
       require LWP::UserAgent;
       LWP::UserAgent->new;
