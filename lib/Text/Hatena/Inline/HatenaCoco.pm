@@ -3,7 +3,6 @@ use utf8;
 use strict;
 use warnings;
 use HTML::Entities;
-use HTTP::Request;
 use JSON::XS;
 use LWP::UserAgent;
 

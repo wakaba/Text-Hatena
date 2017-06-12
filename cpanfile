@@ -10,7 +10,6 @@ requires 'Exporter::Lite';
 requires 'HTML::Entities';
 requires 'HTML::Parser';
 requires 'HTML::Tagset';
-requires 'HTTP::Request';
 requires 'JSON::XS';
 requires 'LWP::UserAgent';
 requires 'List::MoreUtils';
