@@ -142,18 +142,21 @@ sub title_handler {
 sub get_title {
     my ($context, $uri) = @_;
     my $key = 'http:title:' . uri_escape_utf8($uri);
-    my $title = $context->cache->get($key);
-    if (!defined $title && $context->network_enabled) {
-        eval {
-            my $res = $context->ua->get($uri);
-            my $content = decode_utf8($res->decoded_content || $res->content);
-            ($title) = ($content =~ m|<title[^>]*>([^<]*)</title>|i);
-            $title =~ s{^\s+|\s+$}{}g;
-            $title =~ s{\s+}{ }g;
-            $context->cache->set($key, $title,  60 * 60 * 24 * 30);
-        };
-        if ($@) {
-            carp $@;
+    my $title;
+    if ($context->network_enabled) {
+        $title = $context->cache->get($key);
+        if (!defined $title) {
+            eval {
+                my $res = $context->ua->get($uri);
+                my $content = decode_utf8($res->decoded_content || $res->content);
+                ($title) = ($content =~ m|<title[^>]*>([^<]*)</title>|i);
+                $title =~ s{^\s+|\s+$}{}g;
+                $title =~ s{\s+}{ }g;
+                $context->cache->set($key, $title,  60 * 60 * 24 * 30);
+            };
+            if ($@) {
+                carp $@;
+            }
         }
     }
     $title = '' unless defined $title;
