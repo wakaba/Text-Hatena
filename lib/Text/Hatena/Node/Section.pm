@@ -47,6 +47,9 @@ sub as_html {
     my ($self, $context, %opts) = @_;
     my $level = $self->level;
     my $id = $self->id ? sprintf(' id="%s"', escape_html($self->id)) : '';
+    if ($self->id =~ /\A([0-9]+)\z/) {
+        $id .= ' data-hatena-timestamp="'.$1.'"';
+    }
     my $title = $self->title;
     my $tags = '';
     while ($title =~ s/^\[([^\[\]]+)\]//) {

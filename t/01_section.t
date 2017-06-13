@@ -223,6 +223,6 @@ bar
 bar
 --- expected
 <section class="section">
-<h1 id=123><hatena-category name=abc>[abc]</hatena-category><hatena-category name="def">[def]</hatena-category> [xyz]test1</h1>
+<h1 id=123 data-hatena-timestamp=123><hatena-category name=abc>[abc]</hatena-category><hatena-category name="def">[def]</hatena-category> [xyz]test1</h1>
 <p>bar</p>
 </section>
