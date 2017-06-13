@@ -41,6 +41,37 @@ build_inlines {
         );
     };
 
+    # [keyword:___]
+    syntax qr{\[keyword:([^\]]+)\]}ix => sub {
+        my ($context, $keyword) = @_;
+        my $text = 'keyword:' . $keyword;
+        my $attrs = '';
+        my $suffix = '';
+        if ($keyword =~ s/:map(?::(satellite|hybrid)|)\z//) {
+            $attrs .= qq{ data-hatena-embed="map"};
+            $attrs .= qq{ data-hatena-map-type="$1"} if $1;
+        } elsif ($keyword =~ s/:detail\z//) {
+            $attrs .= qq{ data-hatena-embed="keyworddetail"};
+        } elsif ($keyword =~ s/:presentation(?::(mouse)|)\z//) {
+            $attrs .= qq{ data-hatena-presentation="@{[$1 || '']}"};
+            $suffix = '?mode=presentation';
+            $suffix .= '&mouse=true' if $1;
+        }
+        my $escaped_keyword = uri_escape_utf8($keyword);
+        my $link_target = $context->link_target;
+        my $prefix = $context->{keyword_url_prefix} || q{https://d.hatena.ne.jp/keyword/};
+        return sprintf(
+            qq{<a href="%s%s%s" data-hatena-keyword="%s"%s%s>%s</a>},
+            $prefix,
+            $escaped_keyword,
+            $suffix,
+            escape_html($keyword),
+            $link_target,
+            $attrs,
+            escape_html($text),
+        );
+    };
+
 };
 
 1;
