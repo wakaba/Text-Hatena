@@ -78,6 +78,7 @@ sub new {
     $opts{use_vim}         //= 1;
     $opts{expand_movie}    //= 1;
     $opts{use_google_chart} //= 1;
+    $opts{use_hatena_bookmark_detail} //= 1;
 
     # no languages is available when Text::VimColor is disabled
     $opts{available_langs} = [] unless ($opts{use_vim} || $opts{available_langs});

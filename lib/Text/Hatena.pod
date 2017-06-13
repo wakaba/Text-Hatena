@@ -55,6 +55,11 @@ L<Web::oEmbed> are required.
 
 XXX
 
+=item use_hatena_bookmark_detail => $boolean
+
+Whether "detail" widget of Hatena Bookmark should be used for
+C<:detail> syntax or not.
+
 =item use_google_chart => $boolean
 
 Whether images from Google Chart tools are used to represent C<tex:>
@@ -117,8 +122,10 @@ If the C<data-hatena-oembed> attribute is specified, the link is
 expected to be expanded to an "embeded" representation (e.g. embedded
 player widget).  If the value is C<movie>, a movie player is expected.
 Otherwise, if the value is C<barcode>, the QR code of the link URL is
-expected.  Otherwise, if the value is C<title>, the title of the
-linked page is expected.  Otherwise, no specific media is expected.
+expected.  Otherwise, if the value is C<httpdetail>, the "detail"
+widget of Hatena Bookmark for the link URL is expected.  Otherwise, if
+the value is C<title>, the title of the linked page is expected.
+Otherwise, no specific media is expected.
 
 The C<data-hatena-lang> attribute value is the specification of the
 langauge, if any.

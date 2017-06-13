@@ -4,7 +4,7 @@ use warnings;
 use lib 't/lib';
 use Test::Most;
 use Text::Hatena::Test;
-$Text::Hatena::Test::options = { expand_movie => 0, ua => undef };
+$Text::Hatena::Test::options = { expand_movie => 0, ua => undef, use_hatena_bookmark_detail => 0 };
 
 plan tests => 1 * blocks();
 
@@ -242,13 +242,13 @@ http://www.youtube.com/watch?v=D5V28l7FyHA:movie:h360
 --- input
 [http://www.hatena.ne.jp/:detail]
 --- expected
-<p><iframe marginwidth="0" marginheight="0" src="https://b.hatena.ne.jp/entry.parts?url=http%3A%2F%2Fwww.hatena.ne.jp%2F" scrolling="no" frameborder="0" height="230" width="500"><div class="hatena-bookmark-detail-info"><a href="http://www.hatena.ne.jp/">http://www.hatena.ne.jp/</a><a href="https://b.hatena.ne.jp/entry/http%3A%2F%2Fwww.hatena.ne.jp%2F">はてなブックマーク- http://www.hatena.ne.jp/</a></div></iframe></p>
+<p><a href="http://www.hatena.ne.jp/" target="_blank" data-hatena-embed="httpdetail">http://www.hatena.ne.jp/</a></p>
 
 === detail encoded
 --- input
 [http://ja.wikipedia.org/wiki/%E3%81%AF%E3%81%A6%E3%81%AA:detail]
 --- expected
-<p><iframe marginwidth="0" marginheight="0" src="https://b.hatena.ne.jp/entry.parts?url=http%3A%2F%2Fja.wikipedia.org%2Fwiki%2F%25E3%2581%25AF%25E3%2581%25A6%25E3%2581%25AA" scrolling="no" frameborder="0" height="230" width="500"><div class="hatena-bookmark-detail-info"><a href="http://ja.wikipedia.org/wiki/%E3%81%AF%E3%81%A6%E3%81%AA">http://ja.wikipedia.org/wiki/%E3%81%AF%E3%81%A6%E3%81%AA</a><a href="https://b.hatena.ne.jp/entry/http%3A%2F%2Fja.wikipedia.org%2Fwiki%2F%25E3%2581%25AF%25E3%2581%25A6%25E3%2581%25AA">はてなブックマーク- http://ja.wikipedia.org/wiki/%E3%81%AF%E3%81%A6%E3%81%AA</a></div></iframe></p>
+<p><a href="http://ja.wikipedia.org/wiki/%E3%81%AF%E3%81%A6%E3%81%AA" target="_blank" data-hatena-embed="httpdetail">http://ja.wikipedia.org/wiki/%E3%81%AF%E3%81%A6%E3%81%AA</a></p>
 
 === title linefeed
 --- input
