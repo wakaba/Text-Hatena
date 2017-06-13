@@ -141,9 +141,9 @@ sub title_handler {
 
 sub get_title {
     my ($context, $uri) = @_;
-    my $key = 'http:title:' . uri_escape_utf8($uri);
     my $title;
     if ($context->network_enabled) {
+        my $key = 'http:title:' . uri_escape_utf8($uri);
         $title = $context->cache->get($key);
         if (!defined $title) {
             eval {
@@ -158,9 +158,11 @@ sub get_title {
                 carp $@;
             }
         }
+        $title = '' unless defined $title;
+        $title = Encode::decode('utf-8', $title) unless Encode::is_utf8($title);
+    } else {
+        $title = $uri;
     }
-    $title = '' unless defined $title;
-    $title = Encode::decode('utf-8', $title) unless Encode::is_utf8($title);
     return $title;
 }
 
