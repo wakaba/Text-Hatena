@@ -34,6 +34,12 @@ key/value pair arguments:
 
 =over 4
 
+=item amazonid => $string
+
+Amazon associate ID (AssociateTag) of the Amazon's affiliate program,
+used when a link to Amazon Web site is generated.  Defaulted to
+C<hatena-22>.
+
 =item expand_map => $boolean
 
 Whether the C<map:> syntax should be expanded to an embedded Hatena
