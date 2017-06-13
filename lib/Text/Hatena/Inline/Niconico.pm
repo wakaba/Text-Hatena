@@ -39,7 +39,7 @@ build_inlines {
                 $h = 36 if $h <= 35;
             }
         }
-        if ($context->{expand_player}) {
+        if ($context->{expand_movie}) {
             my $urlbase = $context->stash->{baseurl} || $BASEURL . '/';
             my $videourl = "$BASEURL/video/";
             if (!$size && $w && !$h) {
