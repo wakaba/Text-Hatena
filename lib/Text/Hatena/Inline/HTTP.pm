@@ -269,15 +269,10 @@ sub embed_handler {
 sub detail_handler {
     my ($context, $uri, $link_target) = @_;
     if ($context->{use_hatena_bookmark_detail}) {
-        my $title = get_title($context, $uri) || $uri;
         my $escaped_uri = uri_escape_utf8($uri);
         return sprintf(
-            qq{<iframe marginwidth="0" marginheight="0" src="https://b.hatena.ne.jp/entry.parts?url=%s" scrolling="no" frameborder="0" height="230" width="500"><div class="hatena-bookmark-detail-info"><a href="%s">%s</a><a href="https://b.hatena.ne.jp/entry/%s">はてなブックマーク- %s</a></div></iframe>},
+            qq{<iframe marginwidth="0" marginheight="0" src="https://b.hatena.ne.jp/entry.parts?url=%s" scrolling="no" frameborder="0" height="230" width="500"></iframe>},
             $escaped_uri,
-            $uri,
-            $title,
-            $escaped_uri,
-            $title,
         );
     } else {
         return sprintf(
