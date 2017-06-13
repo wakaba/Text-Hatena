@@ -55,6 +55,7 @@ our $INLINES = build_inlines {
     enable 'Amazon';
     enable 'Wikipedia';
     enable 'Contents';
+    enable 'Presentation';
 };
 
 sub new {

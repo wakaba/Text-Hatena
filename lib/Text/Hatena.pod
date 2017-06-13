@@ -198,6 +198,12 @@ attribute).
 
 The C<t> attribute value represents the C<t> parameter, if specified.
 
+=item <hatena-presentation>
+
+Represents an insertion point of the controller for the presentation
+mode, as specified by the presentation syntax
+<http://g.hatena.ne.jp/help#keywordpresentation>.
+
 =item <hatena-tex>
 
 The content is the TeX text of a C<tex:> syntax, if
