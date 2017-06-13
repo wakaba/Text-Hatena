@@ -13,7 +13,7 @@ build_inlines {
         $lang ||= 'ja';
         my $link_target = $context->link_target;
         my $escape_word = uri_escape_utf8($word);
-        return qq|<a href="http://$lang.wikipedia.org/wiki/$escape_word"$link_target>$text</a>|;
+        return qq|<a href="https://$lang.wikipedia.org/wiki/$escape_word"$link_target>$text</a>|;
     };
 };
 
