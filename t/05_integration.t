@@ -38,8 +38,8 @@ test code
 
 ok?
 --- expected
-<div class="section">
-    <h3>This is a head</h3>
+<section class="section">
+    <h1>This is a head</h1>
     <p>foobar</p>
     <p>barbaz</p>
     <dl>
@@ -59,7 +59,7 @@ ok?
     </ul>
     <pre class="code lang-perl" data-lang="perl">test code</pre>
     <p>ok?</p>
-</div>
+</section>
 
 
 === test

@@ -39,17 +39,17 @@ bar
 ====</pre>
 <details class="seemore">
 	<p>barbaz</p>
-	<div class="section">
-		<h4>head</h4>
-		<div class="section">
-			<h5>head</h5>
+	<section class="section">
+		<h1>head</h1>
+		<section class="section">
+			<h1>head</h1>
 			<p>foo</p>
-		</div>
-	</div>
-	<div class="section">
-		<h4>head</h4>
+		</section>
+	</section>
+	<section class="section">
+		<h1>head</h1>
 		<p>bar</p>
-	</div>
+	</section>
 </details>
 
 ### test
@@ -67,19 +67,19 @@ barbaz
 foo
 
 ::: expected
-<div class="section">
-	<h3>head</h3>
+<section class="section">
+	<h1>head</h1>
 	<p>foobar</p>
 
 	<details class="seemore">
 		<p>barbaz</p>
 	</details>
-</div>
+</section>
 
-<div class="section">
-	<h3>head</h3>
+<section class="section">
+	<h1>head</h1>
 	<p>foo</p>
-</div>
+</section>
 
 ### super seemore
 ::: input
@@ -96,19 +96,19 @@ barbaz
 foo
 
 ::: expected
-<div class="section">
-	<h3>head</h3>
+<section class="section">
+	<h1>head</h1>
 	<p>foobar</p>
 
 	<details class="seemore">
 		<p>barbaz</p>
 
-		<div class="section">
-			<h3>head</h3>
+		<section class="section">
+			<h1>head</h1>
 			<p>foo</p>
-		</div>
+		</section>
 	</details>
-</div>
+</section>
 
 ### super seemore
 ::: input
@@ -122,15 +122,15 @@ foobar
 foo
 
 ::: expected
-<div class="section">
-	<h3>head</h3>
+<section class="section">
+	<h1>head</h1>
 	<p>foobar</p>
 
 	<details class="seemore">
-		<div class="section">
-			<h3>head</h3>
+		<section class="section">
+			<h1>head</h1>
 			<p>foo</p>
-		</div>
+		</section>
 	</details>
-</div>
+</section>
 

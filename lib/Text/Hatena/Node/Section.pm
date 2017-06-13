@@ -48,10 +48,10 @@ sub as_html {
     my $level = $self->level;
     my $id = $self->id ? sprintf(' id="%s"', escape_html($self->id)) : '';
     $context->_tmpl(__PACKAGE__, q[
-        <div class="section">
-            <h{{= $level + 2 }}{{= $id }}>{{= $title }}</h{{= $level + 2 }}>
+        <section class="section">
+            <h1{{= $id }}>{{= $title }}</h1>
             {{= $content }}
-        </div>
+        </section>
     ], {
         title   => $context->inline->format($self->title),
         level   => $level,

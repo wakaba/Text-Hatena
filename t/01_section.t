@@ -20,15 +20,15 @@ foo
 
 bar
 --- expected
-<div class="section">
-<h3>test1</h3>
+<section class="section">
+<h1>test1</h1>
 <p>foo</p>
-</div>
+</section>
 
-<div class="section">
-<h3>test2</h3>
+<section class="section">
+<h1>test2</h1>
 <p>bar</p>
-</div>
+</section>
 
 
 === test
@@ -53,30 +53,30 @@ foo!
 
 bar
 --- expected
-<div class="section">
-<h3>test1</h3>
+<section class="section">
+<h1>test1</h1>
 <p>foo</p>
 
-<div class="section">
-<h4>test1.1</h4>
+<section class="section">
+<h1>test1.1</h1>
 <p>foo!</p>
-</div>
+</section>
 
-<div class="section">
-<h4>test1.2</h4>
+<section class="section">
+<h1>test1.2</h1>
 <p>foo!</p>
 
-<div class="section">
-<h5>test1.2.1</h5>
+<section class="section">
+<h1>test1.2.1</h1>
 <p>foo!</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
-<div class="section">
-<h3>test2</h3>
+<section class="section">
+<h1>test2</h1>
 <p>bar</p>
-</div>
+</section>
 
 
 === test
@@ -84,30 +84,30 @@ bar
 * http://example.com/
 foo
 --- expected
-<div class="section">
-<h3><a href="http://example.com/" target="_blank">http://example.com/</a></h3>
+<section class="section">
+<h1><a href="http://example.com/" target="_blank">http://example.com/</a></h1>
 <p>foo</p>
-</div>
+</section>
 
 === heading
 --- input
 * ***
 foobar
 --- expected
-<div class="section">
-	<h3>***</h3>
+<section class="section">
+	<h1>***</h1>
 	<p>foobar</p>
-</div>
+</section>
 
 === very complex heading
 --- input
 ****foobar
 foobar
 --- expected
-<div class="section">
-	<h3>***foobar</h3>
+<section class="section">
+	<h1>***foobar</h1>
 	<p>foobar</p>
-</div>
+</section>
 
 === very complex heading
 --- input
@@ -129,34 +129,34 @@ no spaces
 ***
 no spaces
 --- expected
-<div class="section">
-	<h3></h3>
+<section class="section">
+	<h1></h1>
 	<p>trailing space</p>
-	<div class="section">
-		<h4></h4>
+	<section class="section">
+		<h1></h1>
 		<p>trailing space</p>
 
-		<div class="section">
-			<h5></h5>
+		<section class="section">
+			<h1></h1>
 			<p>trailing space</p>
-		</div>
-	</div>
-</div>
+		</section>
+	</section>
+</section>
 
-<div class="section">
-	<h3></h3>
+<section class="section">
+	<h1></h1>
 	<p>no spaces</p>
-</div>
+</section>
 
-<div class="section">
-	<h3>*</h3>
+<section class="section">
+	<h1>*</h1>
 	<p>no spaces</p>
-</div>
+</section>
 
-<div class="section">
-	<h3>**</h3>
+<section class="section">
+	<h1>**</h1>
 	<p>no spaces</p>
-</div>
+</section>
 
 
 === named
@@ -172,17 +172,17 @@ bar
 *a.b* test3
 baz
 --- expected
-<div class="section">
-<h3 id="hoge_fuga">test1</h3>
+<section class="section">
+<h1 id="hoge_fuga">test1</h1>
 <p>foo</p>
-</div>
+</section>
 
-<div class="section">
-<h3 id="123-456">test2</h3>
+<section class="section">
+<h1 id="123-456">test2</h1>
 <p>bar</p>
-</div>
+</section>
 
-<div class="section">
-<h3>a.b* test3</h3>
+<section class="section">
+<h1>a.b* test3</h1>
 <p>baz</p>
-</div>
+</section>

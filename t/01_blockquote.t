@@ -101,9 +101,9 @@ hoge2
 hoge3
 --- expected
 <blockquote>
-    <div class="section">
-        <h3>hoge1</h3>
+    <section class="section">
+        <h1>hoge1</h1>
         <p>hoge2</p>
-    </div>
+    </section>
 </blockquote>
 <p>hoge3</p>
