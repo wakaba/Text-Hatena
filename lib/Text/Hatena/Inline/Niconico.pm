@@ -3,6 +3,7 @@ use utf8;
 use strict;
 use warnings;
 
+use Text::Hatena::Util;
 use Text::Hatena::Inline::DSL;
 
 our $SUMMARY = "この動画を含む日記";
@@ -24,8 +25,6 @@ build_inlines {
     }xms => sub {
         my ($context, $vid, $movie_options) = @_;
         $movie_options ||= '';
-        my $urlbase = $context->stash->{baseurl} || $BASEURL . '/';
-        my $videourl = "$BASEURL/video/";
         my $size = '';
         my ($w, $h);
         for my $option (split /[:,]/, $movie_options) {
@@ -40,21 +39,42 @@ build_inlines {
                 $h = 36 if $h <= 35;
             }
         }
-        if (!$size && $w && !$h) {
-            $h = int($w / 485 * 350) + 35;
-        } elsif (!$size && !$w && $h) {
-            $w = int(($h - 35) * 485 / 385);
-        }
-        if (!$size && $w && $h) {
-            $size = "?w=$w&h=$h";
-        }
-        my $ret = <<"END";
+        if ($context->{expand_player}) {
+            my $urlbase = $context->stash->{baseurl} || $BASEURL . '/';
+            my $videourl = "$BASEURL/video/";
+            if (!$size && $w && !$h) {
+                $h = int($w / 485 * 350) + 35;
+            } elsif (!$size && !$w && $h) {
+                $w = int(($h - 35) * 485 / 385);
+            }
+            if (!$size && $w && $h) {
+                $size = "?w=$w&h=$h";
+            }
+            my $ret = <<"END";
 <script src="http://ext.nicovideo.jp/thumb_watch/$vid$size" charset="utf-8"></script>
 <a href="${videourl}niconico/$vid" alt="$SUMMARY"><img src="${urlbase}images/d_entry.gif" alt="D" border="0" style="vertical-align: bottom;" title="$SUMMARY"></a>
 END
-        chomp $ret;
-        $ret =~ s/\n//g;
-        return $ret;
+            chomp $ret;
+            $ret =~ s/\n//g;
+            return $ret;
+        } else {
+            if ($size) {
+              $w = 300;
+              $h = 251;
+            }
+            my $attrs = ' data-hatena-embed="movie"';
+            $attrs .= ' data-hatena-width="'.escape_html($w).'"' if defined $w;
+            $attrs .= ' data-hatena-height="'.escape_html($h).'"' if defined $h;
+
+            my $uri = "http://www.nicovideo.jp/watch/$vid";
+            return sprintf(
+                '<a href="%s"%s%s>%s</a>',
+                $uri,
+                $context->link_target,
+                $attrs,
+                $uri,
+            );
+        }
     };
 };
 
