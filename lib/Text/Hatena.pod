@@ -53,7 +53,9 @@ L<Web::oEmbed> are required.
 
 =item urlbase => $string
 
-XXX
+The prefix of URLs used for the links of the C<id:> syntax.  Default
+is C<https://profile.hatena.ne.jp/> or C<https://d.hatena.ne.jp/>,
+depending on the parameters specified.
 
 =item use_hatena_bookmark_detail => $boolean
 

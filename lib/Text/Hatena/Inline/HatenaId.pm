@@ -22,26 +22,28 @@ build_inlines {
     }ix => sub {
         my ($context, $attr) = @_;
         my ($user, $type) = map { $attr->{$_} // $+{$_} // '' } qw/user type/;
-        my $urlbase = $context->{urlbase} || $context->{stash}->{urlbase} || '/';
+        my $urlbase = $context->{urlbase} || $context->{stash}->{urlbase} || '';
         if ($type && lc $type eq 'icon') {
             my $pre = substr($user, 0, 2);
             sprintf(
             q{<a href="%s%s/" class="hatena-id-icon"><img src="https://cdn1.www.st-hatena.com/users/%s/%s/profile.gif" width="16" height="16" alt="id:%s" class="hatena-id-icon"></a>},
-            $urlbase, $user, $pre, $user, $user);
+            $urlbase || 'https://profile.hatena.ne.jp/', $user, $pre, $user, $user);
         } elsif ($type && lc $type eq 'image') {
             my $pre = substr($user, 0, 2);
             sprintf(
             q{<a href="%s%s/" class="hatena-id-image"><img src="https://cdn1.www.st-hatena.com/users/%s/%s/profile.gif" width="60" height="60" alt="id:%s" class="hatena-id-image"></a>},
-            $urlbase, $user, $pre, $user, $user);
+            $urlbase || 'https://profile.hatena.ne.jp/', $user, $pre, $user, $user);
         } elsif ($type && lc $type eq 'detail') {
             my $pre = substr($user, 0, 2);
             sprintf(
             q{<a href="%s%s/" class="hatena-id-icon"><img src="https://cdn1.www.st-hatena.com/users/%s/%s/profile.gif" width="16" height="16" alt="" class="hatena-id-icon">id:%s</a>},
-            $urlbase, $user, $pre, $user, $user);
+            $urlbase || 'https://profile.hatena.ne.jp/', $user, $pre, $user, $user);
         } elsif ($type =~ m{about|archive}) {
-            sprintf '<a href="%s%s/%s">id:%s:%s</a>', $urlbase, $user, $type, $user, $type;
+            sprintf '<a href="%s%s/%s">id:%s:%s</a>',
+                $urlbase || 'https://d.hatena.ne.jp/', $user, $type, $user, $type;
         } else {
-            sprintf '<a href="%s%s/">id:%s</a>', $urlbase, $user, $user;
+            sprintf '<a href="%s%s/">id:%s</a>',
+                $urlbase || 'https://profile.hatena.ne.jp/', $user, $user;
         }
     };
 };
