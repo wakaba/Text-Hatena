@@ -4,7 +4,7 @@ use warnings;
 use lib 't/lib';
 use Test::Most;
 use Text::Hatena::Test;
-$Text::Hatena::Test::options = { expand_movie => 0 };
+$Text::Hatena::Test::options = { expand_movie => 0, use_google_chart => 0 };
 
 BEGIN {
     require LWP::UserAgent;
@@ -265,7 +265,7 @@ http://www.youtube.com/watch?v=D5V28l7FyHA:movie:h360
 --- input
 [http://www.hatena.ne.jp/:barcode]
 --- expected
-<p><a href="http://www.hatena.ne.jp/" class="http-barcode" target="_blank"><img src="https://chart.apis.google.com/chart?chs=150x150&amp;cht=qr&amp;chl=http%3A%2F%2Fwww.hatena.ne.jp%2F" title="http://www.hatena.ne.jp/" /></a></p>
+<p><a href="http://www.hatena.ne.jp/" class="http-barcode" target="_blank" data-hatena-embed="barcode">http://www.hatena.ne.jp/</a></p>
 
 === detail
 --- input

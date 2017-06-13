@@ -55,6 +55,11 @@ L<Web::oEmbed> are required.
 
 XXX
 
+=item use_google_chart => $boolean
+
+Whether images from Google Chart tools are used to represent C<tex:>
+and C<:barcode> syntax texts or not.
+
 =item use_vim => $boolean
 
 Whether syntax highlighting using L<Text::VimColor> module is enabled
@@ -111,8 +116,9 @@ syntax, if specified (e.g. C<perl> for C<< >|perl| >>).
 If the C<data-hatena-oembed> attribute is specified, the link is
 expected to be expanded to an "embeded" representation (e.g. embedded
 player widget).  If the value is C<movie>, a movie player is expected.
-Otherwise, if the value is C<title>, the title of the linked page is
-expected.  Otherwise, no specific media is expected.
+Otherwise, if the value is C<barcode>, the QR code of the link URL is
+expected.  Otherwise, if the value is C<title>, the title of the
+linked page is expected.  Otherwise, no specific media is expected.
 
 The C<data-hatena-lang> attribute value is the specification of the
 langauge, if any.
@@ -122,6 +128,11 @@ width, if any.
 
 The C<data-hatena-height> attribute value is the expected rendered
 height, if any.
+
+=item <hatena-tex>
+
+The TeX text of a C<tex:> syntax, if C<use_google_chart> option is
+false.
 
 =back
 

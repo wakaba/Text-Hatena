@@ -3,8 +3,8 @@ use utf8;
 use strict;
 use warnings;
 use URI::Escape;
-use HTML::Entities;
 
+use Text::Hatena::Util;
 use Text::Hatena::Inline::DSL;
 
 build_inlines {
@@ -28,10 +28,14 @@ build_inlines {
 
         $tex =~ s/\\([\[\]])/$1/g;
 
-        return sprintf('<img src="https://chart.apis.google.com/chart?cht=tx&chl=%s" alt="%s"/>',
-            uri_escape_utf8($tex),
-            encode_entities($tex)
-        );
+        if ($context->{use_google_chart}) {
+            return sprintf('<img src="https://chart.apis.google.com/chart?cht=tx&chl=%s" alt="%s"/>',
+                uri_escape_utf8($tex),
+                escape_html($tex)
+            );
+        } else {
+            return sprintf('<hatena-tex>%s</hatena-tex>', escape_html($tex));
+        }
     };
 };
 

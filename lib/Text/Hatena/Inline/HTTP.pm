@@ -174,13 +174,22 @@ sub get_title {
 
 sub barcode_handler {
     my ($context, $uri, $link_target) = @_;
-    sprintf(
-        '<a href="%s" class="http-barcode"%s><img src="https://chart.apis.google.com/chart?chs=150x150&cht=qr&chl=%s" title="%s"/></a>',
-        $uri,
-        $link_target,
-        uri_escape_utf8($uri),
-        $uri,
-    );
+    if ($context->{use_google_chart}) {
+        return sprintf(
+            '<a href="%s" class="http-barcode"%s><img src="https://chart.apis.google.com/chart?chs=150x150&cht=qr&chl=%s" title="%s"/></a>',
+            $uri,
+            $link_target,
+            uri_escape_utf8($uri),
+            $uri,
+        );
+    } else {
+        return sprintf(
+            '<a href="%s" class="http-barcode"%s data-hatena-embed="barcode">%s</a>',
+            $uri,
+            $link_target,
+            $uri,
+        );
+    }
 }
 
 sub movie_handler {
