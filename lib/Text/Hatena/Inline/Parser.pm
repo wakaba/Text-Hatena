@@ -162,6 +162,7 @@ sub start {
         # TODO attribute
         #warn "\nstart: unknown $tagname\n";
         my $syntax;
+        my $is_hatena;
         if (lc $tagname eq 'hatena') {
             # <hatena f:id:...> / attr が記法
             for my $key (%{$attr || {}}) {
@@ -170,6 +171,7 @@ sub start {
                 delete $attr->{$key};
                 last;
             }
+            $is_hatena = 1;
         } else {
             #<f:id:...> / tagname が記法
             $syntax = $tagname;
@@ -184,6 +186,9 @@ sub start {
                 # 記法じゃなかった(独自タグ)
                 $self->html .= $text;
             }
+        } elsif ($is_hatena) {
+            $text =~ s/^</<hatena-/;
+            $self->html .= $text . '</hatena-hatena>';
         } else {
             $self->html .= $text;
         }

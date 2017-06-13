@@ -233,6 +233,13 @@ attribute is not specified, it should be just a link to the file.
 The C<t> attribute value specifies the start position of the file, as
 a number of seconds, when the file is a sound file.
 
+=item <hatena-hatena>
+
+Represents a Hatena module
+<https://hatenadiary.g.hatena.ne.jp/keyword/%E3%81%AF%E3%81%A6%E3%81%AA%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E4%B8%80%E8%A6%A7>
+<http://g.hatena.ne.jp/help#module>.  Attributes are Hatena module's
+attributes.
+
 =item <hatena-map lat lon width height type t link target>
 
 Represents a C<map:> syntax text, if C<expand_map> option is false.
