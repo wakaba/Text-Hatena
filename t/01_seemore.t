@@ -37,7 +37,7 @@ bar
 <p>foobar</p>
 <pre class="code">superpre
 ====</pre>
-<div class="seemore">
+<details class="seemore">
 	<p>barbaz</p>
 	<div class="section">
 		<h4>head</h4>
@@ -50,7 +50,7 @@ bar
 		<h4>head</h4>
 		<p>bar</p>
 	</div>
-</div>
+</details>
 
 ### test
 ::: input
@@ -71,9 +71,9 @@ foo
 	<h3>head</h3>
 	<p>foobar</p>
 
-	<div class="seemore">
+	<details class="seemore">
 		<p>barbaz</p>
-	</div>
+	</details>
 </div>
 
 <div class="section">
@@ -100,14 +100,14 @@ foo
 	<h3>head</h3>
 	<p>foobar</p>
 
-	<div class="seemore">
+	<details class="seemore">
 		<p>barbaz</p>
 
 		<div class="section">
 			<h3>head</h3>
 			<p>foo</p>
 		</div>
-	</div>
+	</details>
 </div>
 
 ### super seemore
@@ -126,11 +126,11 @@ foo
 	<h3>head</h3>
 	<p>foobar</p>
 
-	<div class="seemore">
+	<details class="seemore">
 		<div class="section">
 			<h3>head</h3>
 			<p>foo</p>
 		</div>
-	</div>
+	</details>
 </div>
 

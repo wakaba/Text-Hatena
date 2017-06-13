@@ -26,9 +26,9 @@ sub lang { $_[0]->{lang} }
 sub as_html {
     my ($self, $context, %opts) = @_;
     $context->_tmpl(__PACKAGE__, q[
-        <div class="seemore">
+        <details class="seemore">
             {{= $content }}
-        </div>
+        </details>
     ], {
         content => $self->SUPER::as_html($context, %opts),
     });
