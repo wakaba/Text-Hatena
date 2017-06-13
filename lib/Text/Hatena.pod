@@ -158,6 +158,13 @@ height, if any.
 
 The attribute value is the keyword the element is linked to.
 
+=item <hatena-category name>
+
+The C<name> attribute value is the category to which the section
+belongs, as specified by the category syntax
+<https://hatenadiary.g.hatena.ne.jp/keyword/%E6%97%A5%E8%A8%98%E3%82%92%E3%82%AB%E3%83%86%E3%82%B4%E3%83%AA%E3%83%BC%E5%88%86%E3%81%91%E3%81%97%E3%81%A6%E6%95%B4%E7%90%86%E3%81%99%E3%82%8B%EF%BC%88%E3%82%AB%E3%83%86%E3%82%B4%E3%83%AA%E3%83%BC%E8%A8%98%E6%B3%95%EF%BC%89>.
+This element is used as children of the heading of the section.
+
 =item <hatena-map lat lon width height type t link target>
 
 Represent a C<map:> syntax text, if C<expand_map> option is false.

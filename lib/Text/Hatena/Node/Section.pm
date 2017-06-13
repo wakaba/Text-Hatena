@@ -47,13 +47,24 @@ sub as_html {
     my ($self, $context, %opts) = @_;
     my $level = $self->level;
     my $id = $self->id ? sprintf(' id="%s"', escape_html($self->id)) : '';
+    my $title = $self->title;
+    my $tags = '';
+    while ($title =~ s/^\[([^\[\]]+)\]//) {
+        my $escaped_tag = escape_html($1);
+        $tags .= sprintf(
+            q{<hatena-category name="%s">[%s]</hatena-category>},
+            $escaped_tag,
+            $escaped_tag,
+        );
+    }
     $context->_tmpl(__PACKAGE__, q[
         <section class="section">
-            <h1{{= $id }}>{{= $title }}</h1>
+            <h1{{= $id }}>{{= $tags . $title }}</h1>
             {{= $content }}
         </section>
     ], {
-        title   => $context->inline->format($self->title),
+        tags    => $tags,
+        title   => $context->inline->format($title),
         level   => $level,
         id      => $id,
         content => $self->SUPER::as_html($context, %opts),

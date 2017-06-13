@@ -186,3 +186,43 @@ baz
 <h1>a.b* test3</h1>
 <p>baz</p>
 </section>
+
+=== test
+--- input
+*[abc][def][] test1
+bar
+--- expected
+<section class="section">
+<h1><hatena-category name=abc>[abc]</hatena-category><hatena-category name="def">[def]</hatena-category>[] test1</h1>
+<p>bar</p>
+</section>
+
+=== test
+--- input
+* [abc][def] test1
+bar
+--- expected
+<section class="section">
+<h1><hatena-category name=abc>[abc]</hatena-category><hatena-category name="def">[def]</hatena-category> test1</h1>
+<p>bar</p>
+</section>
+
+=== test
+--- input
+* [abc][def] [xyz]test1
+bar
+--- expected
+<section class="section">
+<h1><hatena-category name=abc>[abc]</hatena-category><hatena-category name="def">[def]</hatena-category> [xyz]test1</h1>
+<p>bar</p>
+</section>
+
+=== test
+--- input
+*123* [abc][def] [xyz]test1
+bar
+--- expected
+<section class="section">
+<h1 id=123><hatena-category name=abc>[abc]</hatena-category><hatena-category name="def">[def]</hatena-category> [xyz]test1</h1>
+<p>bar</p>
+</section>
