@@ -54,6 +54,7 @@ our $INLINES = build_inlines {
     enable 'GoogleMap';
     enable 'Amazon';
     enable 'Wikipedia';
+    enable 'Contents';
 };
 
 sub new {
