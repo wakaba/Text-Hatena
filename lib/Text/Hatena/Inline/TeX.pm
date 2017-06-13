@@ -28,7 +28,7 @@ build_inlines {
 
         $tex =~ s/\\([\[\]])/$1/g;
 
-        return sprintf('<img src="http://chart.apis.google.com/chart?cht=tx&chl=%s" alt="%s"/>',
+        return sprintf('<img src="https://chart.apis.google.com/chart?cht=tx&chl=%s" alt="%s"/>',
             uri_escape_utf8($tex),
             encode_entities($tex)
         );

@@ -180,7 +180,7 @@ http://example.com/
 [tex:e^{i\pi} = -1]
 --- expected
 <p>
-<img src="http://chart.apis.google.com/chart?cht=tx&chl=e%5E%7Bi%5Cpi%7D%20%3D%20-1" alt="e^{i\pi} = -1"/>
+<img src="https://chart.apis.google.com/chart?cht=tx&chl=e%5E%7Bi%5Cpi%7D%20%3D%20-1" alt="e^{i\pi} = -1"/>
 </p>
 
 === [tex:] escape
@@ -188,7 +188,7 @@ http://example.com/
 [tex:\sqrt\[3\]{4}]
 --- expected
 <p>
-<img alt="\sqrt[3]{4}" src="http://chart.apis.google.com/chart?cht=tx&amp;chl=%5Csqrt%5B3%5D%7B4%7D"></img>
+<img alt="\sqrt[3]{4}" src="https://chart.apis.google.com/chart?cht=tx&amp;chl=%5Csqrt%5B3%5D%7B4%7D"></img>
 </p>
 
 === [tex:] マルチバイト
@@ -196,5 +196,5 @@ http://example.com/
 [tex:ほげ]
 --- expected
 <p>
-<img alt="ほげ" src="http://chart.apis.google.com/chart?cht=tx&amp;chl=%E3%81%BB%E3%81%92"></img>
+<img alt="ほげ" src="https://chart.apis.google.com/chart?cht=tx&amp;chl=%E3%81%BB%E3%81%92"></img>
 </p>
