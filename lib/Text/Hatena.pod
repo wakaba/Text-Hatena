@@ -111,7 +111,8 @@ syntax, if specified (e.g. C<perl> for C<< >|perl| >>).
 If the C<data-hatena-oembed> attribute is specified, the link is
 expected to be expanded to an "embeded" representation (e.g. embedded
 player widget).  If the value is C<movie>, a movie player is expected.
-Otherwise, no specific media is expected.
+Otherwise, if the value is C<title>, the title of the linked page is
+expected.  Otherwise, no specific media is expected.
 
 The C<data-hatena-lang> attribute value is the specification of the
 langauge, if any.

@@ -129,12 +129,18 @@ sub favicon_handler {
 sub title_handler {
     my ($context, $uri, $link_target, $title) = @_;
 
-    length($title) or $title = get_title($context, $uri);
+    my $attrs = '';
+    unless (length($title)) {
+        $attrs .= ' data-hatena-embed="title"'
+            unless $context->network_enabled;
+        $title = get_title($context, $uri);
+    }
 
     sprintf(
-        '<a href="%s"%s>%s</a>',
+        '<a href="%s"%s%s>%s</a>',
         $uri,
         $link_target,
+        $attrs,
         encode_entities(decode_entities($title)),
     );
 }

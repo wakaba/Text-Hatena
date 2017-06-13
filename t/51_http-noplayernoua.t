@@ -48,13 +48,13 @@ http://www.hatena.ne.jp/
 --- input
 [http://www.hatena.ne.jp/:title]
 --- expected
-<p><a href="http://www.hatena.ne.jp/" target="_blank">http://www.hatena.ne.jp/</a></p>
+<p><a href="http://www.hatena.ne.jp/" target="_blank" data-hatena-embed="title">http://www.hatena.ne.jp/</a></p>
 
 === http title linebreak
 --- input
 [http://linebreak.com/:title]
 --- expected
-<p><a href="http://linebreak.com/" target="_blank">http://linebreak.com/</a></p>
+<p><a href="http://linebreak.com/" target="_blank" data-hatena-embed="title">http://linebreak.com/</a></p>
 
 === http title=
 --- input
@@ -66,7 +66,7 @@ http://www.hatena.ne.jp/
 --- input
 [http://www.hatena.ne.jp/:title=]
 --- expected
-<p><a href="http://www.hatena.ne.jp/" target="_blank">http://www.hatena.ne.jp/</a></p>
+<p><a href="http://www.hatena.ne.jp/" target="_blank" data-hatena-embed="title">http://www.hatena.ne.jp/</a></p>
 
 === http title=:
 --- input
@@ -78,7 +78,7 @@ http://www.hatena.ne.jp/
 --- input
 [http://www.hatena.ne.jp/:title:bookmark]
 --- expected
-<p><a href="http://www.hatena.ne.jp/" target="_blank">http://www.hatena.ne.jp/</a><a href="https://b.hatena.ne.jp/entry/http://www.hatena.ne.jp/" class="http-bookmark" target="_blank"><img src="https://b.hatena.ne.jp/entry/image/http://www.hatena.ne.jp/" alt="" class="http-bookmark" /></a></p>
+<p><a href="http://www.hatena.ne.jp/" target="_blank" data-hatena-embed="title">http://www.hatena.ne.jp/</a><a href="https://b.hatena.ne.jp/entry/http://www.hatena.ne.jp/" class="http-bookmark" target="_blank"><img src="https://b.hatena.ne.jp/entry/image/http://www.hatena.ne.jp/" alt="" class="http-bookmark" /></a></p>
 
 === http title + bookmark 2
 --- input
@@ -91,7 +91,7 @@ http://www.hatena.ne.jp/
 --- input
 [http://www.hatena.ne.jp/:bookmark:title]
 --- expected
-<p><a href="https://b.hatena.ne.jp/entry/http://www.hatena.ne.jp/" class="http-bookmark" target="_blank"><img src="https://b.hatena.ne.jp/entry/image/http://www.hatena.ne.jp/" alt="" class="http-bookmark" /></a><a href="http://www.hatena.ne.jp/" target="_blank">http://www.hatena.ne.jp/</a></p>
+<p><a href="https://b.hatena.ne.jp/entry/http://www.hatena.ne.jp/" class="http-bookmark" target="_blank"><img src="https://b.hatena.ne.jp/entry/image/http://www.hatena.ne.jp/" alt="" class="http-bookmark" /></a><a href="http://www.hatena.ne.jp/" target="_blank" data-hatena-embed="title">http://www.hatena.ne.jp/</a></p>
 
 === http bookmark + title 2
 --- input
@@ -268,7 +268,7 @@ bar]
 [http://www.hatena.ne.jp/:title:bookmark:star]
 --- expected
 <p>
-  <a href="http://www.hatena.ne.jp/" target="_blank">http://www.hatena.ne.jp/</a>
+  <a href="http://www.hatena.ne.jp/" target="_blank" data-hatena-embed="title">http://www.hatena.ne.jp/</a>
   <a class="http-bookmark" href="https://b.hatena.ne.jp/entry/http://www.hatena.ne.jp/" target="_blank">
     <img alt="" class="http-bookmark" src="https://b.hatena.ne.jp/entry/image/http://www.hatena.ne.jp/" />
   </a>
@@ -289,7 +289,7 @@ bar]
   <a href="http://www.hatena.ne.jp/" target="_blank">
     <img alt="" class="http-favicon" src="https://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fwww.hatena.ne.jp%2F" />
   </a>
-  <a href="http://www.hatena.ne.jp/" target="_blank">http://www.hatena.ne.jp/</a>
+  <a href="http://www.hatena.ne.jp/" target="_blank" data-hatena-embed="title">http://www.hatena.ne.jp/</a>
   <a class="http-bookmark" href="https://b.hatena.ne.jp/entry/http://www.hatena.ne.jp/" target="_blank">
     <img alt="" class="http-bookmark" src="https://b.hatena.ne.jp/entry/image/http://www.hatena.ne.jp/" />
   </a>
