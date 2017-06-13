@@ -244,7 +244,7 @@ sub embed_handler {
             undef;
         }
     } || sprintf(
-        '<a href="%s"%s>%s</a>',
+        '<a href="%s"%s data-hatena-embed="">%s</a>',
         $uri,
         $link_target,
         $uri,

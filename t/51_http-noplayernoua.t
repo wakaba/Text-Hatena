@@ -218,19 +218,19 @@ http://www.youtube.com/watch?v=D5V28l7FyHA:movie:h360
 --- input
 [https://gist.github.com/1833407:embed]
 --- expected
-<p><a href="https://gist.github.com/1833407" target="_blank">https://gist.github.com/1833407</a></p>
+<p><a href="https://gist.github.com/1833407" target="_blank" data-hatena-embed="">https://gist.github.com/1833407</a></p>
 
 === embed
 --- input
 [https://gist.github.com/1833407:embed#ほげほげ]
 --- expected
-<p><a href="https://gist.github.com/1833407" target="_blank">https://gist.github.com/1833407</a></p>
+<p><a href="https://gist.github.com/1833407" target="_blank" data-hatena-embed="">https://gist.github.com/1833407</a></p>
 
 === embed
 --- input
 [https://gist.github.com/1833407:embed#ほげほげ#ふがふが]
 --- expected
-<p><a href="https://gist.github.com/1833407" target="_blank">https://gist.github.com/1833407</a></p>
+<p><a href="https://gist.github.com/1833407" target="_blank" data-hatena-embed="">https://gist.github.com/1833407</a></p>
 
 === barcode
 --- input
