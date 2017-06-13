@@ -233,7 +233,7 @@ http://www.youtube.com/watch?v=D5V28l7FyHA:movie:h360
 --- input
 [http://www.nicovideo.jp/watch/sm1128042:movie]
 --- expected
-<p><script type="text/javascript" src="http://ext.nicovideo.jp/thumb_watch/sm1128042"></script></p>
+<p><script src="http://ext.nicovideo.jp/thumb_watch/sm1128042"></script></p>
 
 === movie not implemented
 --- input

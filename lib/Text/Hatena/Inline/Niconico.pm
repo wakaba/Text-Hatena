@@ -6,7 +6,7 @@ use warnings;
 use Text::Hatena::Inline::DSL;
 
 our $SUMMARY = "この動画を含む日記";
-our $BASEURL = "http://d.hatena.ne.jp";
+our $BASEURL = "https://d.hatena.ne.jp";
 
 build_inlines {
     # [niconico:___]
@@ -49,7 +49,7 @@ build_inlines {
             $size = "?w=$w&h=$h";
         }
         my $ret = <<"END";
-<script type="text/javascript" src="http://ext.nicovideo.jp/thumb_watch/$vid$size" charset="utf-8"></script>
+<script src="http://ext.nicovideo.jp/thumb_watch/$vid$size" charset="utf-8"></script>
 <a href="${videourl}niconico/$vid" alt="$SUMMARY"><img src="${urlbase}images/d_entry.gif" alt="D" border="0" style="vertical-align: bottom;" title="$SUMMARY"></a>
 END
         chomp $ret;

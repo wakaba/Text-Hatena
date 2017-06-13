@@ -226,7 +226,7 @@ sub movie_handler {
         } elsif ($uri =~ m{^http://www.nicovideo.jp/watch/(\w+)}) {
             my $vid = $1;
             return sprintf(
-                q{<script type="text/javascript" src="http://ext.nicovideo.jp/thumb_watch/%s"></script>},
+                q{<script src="http://ext.nicovideo.jp/thumb_watch/%s"></script>},
                 $vid,
             );
         }
