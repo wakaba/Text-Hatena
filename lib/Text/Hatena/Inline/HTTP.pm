@@ -8,6 +8,7 @@ use HTML::Entities;
 use URI::Escape qw/uri_escape_utf8/;
 
 use Text::Hatena::Constants qw($URI_PATTERN);
+use Text::Hatena::Util;
 use Text::Hatena::Inline::DSL;
 
 my $char_wp  = q{A-Za-z0-9\-\.~/_?&=%#+:;,\@'\$*!\(\)}; # with paren
@@ -178,46 +179,53 @@ sub movie_handler {
     my ($context, $uri, $link_target, $title, $sub_option) = @_;
     my ($w, $h);
     my @options = split /:/, $sub_option || '';
-    if ($uri =~ m{^https?://(?:jp|www)[.]youtube[.]com/watch[?]v=([\w\-]+)}) {
-        for my $option (@options) {
-            if (lc $option eq 'small') {
-                $w = 300;
-                $h = 225;
-            } elsif ($option =~ /^w(\d+)/) {
-                $w = $1;
-            } elsif ($option =~ /^h(\d+)/) {
-                $h = $1;
-            }
+    for my $option (@options) {
+        if (lc $option eq 'small') {
+            $w = 300;
+            $h = 225;
+        } elsif ($option =~ /^w(\d+)/) {
+            $w = $1;
+        } elsif ($option =~ /^h(\d+)/) {
+            $h = $1;
         }
-        if ($w && $h) {
-        } elsif ($w && !$h) {
-            $h = int($w/4*3);
-        } elsif (!$w && $h) {
-            $w = int($h*4/3);
-        } else {
-            ($w, $h) = (420, 315);
-        }
-        my $code = $1;
-        return sprintf(
-            '<iframe width="%d" height="%d" src="https://www.youtube.com/embed/%s?wmode=transparent" frameborder="0" allowfullscreen></iframe>',
-            $w,
-            $h,
-            $code,
-        );
-    } elsif ($uri =~ m{^http://www.nicovideo.jp/watch/(\w+)}) {
-        my $vid = $1;
-        return sprintf(
-            q{<script type="text/javascript" src="http://ext.nicovideo.jp/thumb_watch/%s"></script>},
-            $vid,
-        );
-    } else {
-        return sprintf(
-            '<a href="%s"%s>%s</a>',
-            $uri,
-            $link_target,
-            $uri,
-        );
     }
+    if ($w && $h) {
+    } elsif ($w && !$h) {
+        $h = int($w/4*3);
+    } elsif (!$w && $h) {
+        $w = int($h*4/3);
+    } else {
+        ($w, $h) = (420, 315);
+    }
+    if ($context->{expand_movie}) {
+        if ($uri =~ m{^https?://(?:jp|www)[.]youtube[.]com/watch[?]v=([\w\-]+)}) {
+            my $code = $1;
+            return sprintf(
+                '<iframe width="%d" height="%d" src="https://www.youtube.com/embed/%s?wmode=transparent" frameborder="0" allowfullscreen></iframe>',
+                $w,
+                $h,
+                $code,
+            );
+        } elsif ($uri =~ m{^http://www.nicovideo.jp/watch/(\w+)}) {
+            my $vid = $1;
+            return sprintf(
+                q{<script type="text/javascript" src="http://ext.nicovideo.jp/thumb_watch/%s"></script>},
+                $vid,
+            );
+        }
+    }
+
+    my $attrs = ' data-hatena-embed="movie"';
+    $attrs .= ' data-hatena-width="'.escape_html($w).'"';
+    $attrs .= ' data-hatena-height="'.escape_html($h).'"';
+
+    return sprintf(
+        '<a href="%s"%s%s>%s</a>',
+        $uri,
+        $link_target,
+        $attrs,
+        $uri,
+    );
 }
 
 sub embed_handler {

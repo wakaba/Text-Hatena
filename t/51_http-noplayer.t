@@ -4,6 +4,7 @@ use warnings;
 use lib 't/lib';
 use Test::Most;
 use Text::Hatena::Test;
+$Text::Hatena::Test::options = { expand_movie => 0 };
 
 BEGIN {
     require LWP::UserAgent;
@@ -167,55 +168,55 @@ http://www.hatena.ne.jp/はてな
 --- input
 [http://www.youtube.com/watch?v=D5V28l7FyHA:movie]
 --- expected
-<p><iframe width="420" height="315" src="https://www.youtube.com/embed/D5V28l7FyHA?wmode=transparent" frameborder="0" allowfullscreen></iframe></p>
+<p><a href="http://www.youtube.com/watch?v=D5V28l7FyHA" target="_blank" data-hatena-embed="movie" data-hatena-height="315" data-hatena-width="420">http://www.youtube.com/watch?v=D5V28l7FyHA</a></p>
 
 === movie YouTube jp
 --- input
 [http://jp.youtube.com/watch?v=D5V28l7FyHA:movie]
 --- expected
-<p><iframe width="420" height="315" src="https://www.youtube.com/embed/D5V28l7FyHA?wmode=transparent" frameborder="0" allowfullscreen></iframe></p>
+<p><a href="http://jp.youtube.com/watch?v=D5V28l7FyHA" target="_blank" data-hatena-embed="movie" data-hatena-height="315" data-hatena-width="420">http://jp.youtube.com/watch?v=D5V28l7FyHA</a></p>
 
 === movie YouTube without bracket
 --- input
 http://www.youtube.com/watch?v=D5V28l7FyHA:movie
 --- expected
-<p><iframe width="420" height="315" src="https://www.youtube.com/embed/D5V28l7FyHA?wmode=transparent" frameborder="0" allowfullscreen></iframe></p>
+<p><a href="http://www.youtube.com/watch?v=D5V28l7FyHA" target="_blank" data-hatena-embed="movie" data-hatena-height="315" data-hatena-width="420">http://www.youtube.com/watch?v=D5V28l7FyHA</a></p>
 
 === movie YouTube + query
 --- input
 [http://www.youtube.com/watch?v=D5V28l7FyHA&feature=plcp&context=C30f22f1UDOEgsToPDskIBRKR_YtLEXvdxtCEw5nzD:movie]
 --- expected
-<p><iframe width="420" height="315" src="https://www.youtube.com/embed/D5V28l7FyHA?wmode=transparent" frameborder="0" allowfullscreen></iframe></p>
+<p><a href="http://www.youtube.com/watch?v=D5V28l7FyHA&feature=plcp&context=C30f22f1UDOEgsToPDskIBRKR_YtLEXvdxtCEw5nzD" target="_blank" data-hatena-embed="movie" data-hatena-height="315" data-hatena-width="420">http://www.youtube.com/watch?v=D5V28l7FyHA&feature=plcp&context=C30f22f1UDOEgsToPDskIBRKR_YtLEXvdxtCEw5nzD</a></p>
 
 === movie youtube:small
 --- input
 [http://www.youtube.com/watch?v=D5V28l7FyHA:movie:small]
 --- expected
-<p><iframe width="300" height="225" src="https://www.youtube.com/embed/D5V28l7FyHA?wmode=transparent" frameborder="0" allowfullscreen></iframe></p>
+<p><a href="http://www.youtube.com/watch?v=D5V28l7FyHA" target="_blank" data-hatena-embed="movie" data-hatena-height="225" data-hatena-width="300">http://www.youtube.com/watch?v=D5V28l7FyHA</a></p>
 
 === movie youtube:w
 --- input
 [http://www.youtube.com/watch?v=D5V28l7FyHA:movie:w480]
 --- expected
-<p><iframe width="480" height="360" src="https://www.youtube.com/embed/D5V28l7FyHA?wmode=transparent" frameborder="0" allowfullscreen></iframe></p>
+<p><a href="http://www.youtube.com/watch?v=D5V28l7FyHA" target="_blank" data-hatena-embed="movie" data-hatena-height="360" data-hatena-width="480">http://www.youtube.com/watch?v=D5V28l7FyHA</a></p>
 
 === movie youtube:h
 --- input
 [http://www.youtube.com/watch?v=D5V28l7FyHA:movie:h360]
 --- expected
-<p><iframe width="480" height="360" src="https://www.youtube.com/embed/D5V28l7FyHA?wmode=transparent" frameborder="0" allowfullscreen></iframe></p>
+<p><a href="http://www.youtube.com/watch?v=D5V28l7FyHA" target="_blank" data-hatena-embed="movie" data-hatena-height="360" data-hatena-width="480">http://www.youtube.com/watch?v=D5V28l7FyHA</a></p>
 
 === movie youtube:h without bracket
 --- input
 http://www.youtube.com/watch?v=D5V28l7FyHA:movie:h360
 --- expected
-<p><iframe width="480" height="360" src="https://www.youtube.com/embed/D5V28l7FyHA?wmode=transparent" frameborder="0" allowfullscreen></iframe></p>
+<p><a href="http://www.youtube.com/watch?v=D5V28l7FyHA" target="_blank" data-hatena-embed="movie" data-hatena-height="360" data-hatena-width="480">http://www.youtube.com/watch?v=D5V28l7FyHA</a></p>
 
 === movie YouTube include hyphen
 --- input
 [http://www.youtube.com/watch?v=9x-XAeRN3NM:movie]
 --- expected
-<p><iframe width="420" height="315" src="https://www.youtube.com/embed/9x-XAeRN3NM?wmode=transparent" frameborder="0" allowfullscreen></iframe></p>
+<p><a href="http://www.youtube.com/watch?v=9x-XAeRN3NM" target="_blank" data-hatena-embed="movie" data-hatena-height="315" data-hatena-width="420">http://www.youtube.com/watch?v=9x-XAeRN3NM</a></p>
 
 === movie ugomemo
 --- input
@@ -233,7 +234,7 @@ http://www.youtube.com/watch?v=D5V28l7FyHA:movie:h360
 --- input
 [http://www.nicovideo.jp/watch/sm1128042:movie]
 --- expected
-<p><script type="text/javascript" src="http://ext.nicovideo.jp/thumb_watch/sm1128042"></script></p>
+<p><a data-hatena-embed="movie" data-hatena-height="315" data-hatena-width="420" href="http://www.nicovideo.jp/watch/sm1128042" target="_blank">http://www.nicovideo.jp/watch/sm1128042</a></p>
 
 === movie not implemented
 --- input

@@ -34,6 +34,11 @@ key/value pair arguments:
 
 =over 4
 
+=item expand_movie => $boolean
+
+Whether the C<:movie> syntax should be expanded to a movie player or
+not.  Defaulted to true.
+
 =item ua => $ua
 
 A L<LWP::UserAgent> object, used for any network access happened as
@@ -101,14 +106,21 @@ Following custom markups are used:
 The C<data-lang> attribute value is the language name of the super-pre
 syntax, if specified (e.g. C<perl> for C<< >|perl| >>).
 
-=item <a data-hatena-embed data-hatena-lang>
+=item <a data-hatena-embed data-hatena-lang data-hatena-width data-hatena-height>
 
-The C<data-hatena-oembed> attribute is a boolean attribute
-representing whether the link is expected to be expanded to "embeded"
-representation or not.
+If the C<data-hatena-oembed> attribute is specified, the link is
+expected to be expanded to an "embeded" representation (e.g. embedded
+player widget).  If the value is C<movie>, a movie player is expected.
+Otherwise, no specific media is expected.
 
 The C<data-hatena-lang> attribute value is the specification of the
 langauge, if any.
+
+The C<data-hatena-width> attribute value is the expected rendered
+width, if any.
+
+The C<data-hatena-height> attribute value is the expected rendered
+height, if any.
 
 =back
 

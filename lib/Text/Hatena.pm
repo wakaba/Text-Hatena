@@ -76,6 +76,7 @@ sub new {
     $opts{enable_footnote} //= 1;
     $opts{enable_unlink}   //= 1;
     $opts{use_vim}         //= 1;
+    $opts{expand_movie}    //= 1;
 
     # no languages is available when Text::VimColor is disabled
     $opts{available_langs} = [] unless ($opts{use_vim} || $opts{available_langs});
