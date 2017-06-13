@@ -39,6 +39,11 @@ key/value pair arguments:
 Whether the C<:movie> syntax should be expanded to a movie player or
 not.  Defaulted to true.
 
+=item keyword_url_prefix => $string
+
+The prefix of URLs used for the links of the C<[[]]> syntax.  Default
+is C<https://d.hatena.ne.jp/keyword/>.
+
 =item ua => $ua
 
 A L<LWP::UserAgent> object, used for any network access happened as
@@ -138,10 +143,14 @@ width, if any.
 The C<data-hatena-height> attribute value is the expected rendered
 height, if any.
 
+=item <a data-hatena-keyword>
+
+The attribute value is the keyword the element is linked to.
+
 =item <hatena-tex>
 
-The TeX text of a C<tex:> syntax, if C<use_google_chart> option is
-false.
+The content is the TeX text of a C<tex:> syntax, if
+C<use_google_chart> option is false.
 
 =back
 

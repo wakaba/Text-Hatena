@@ -5,6 +5,7 @@ use warnings;
 
 use Text::Hatena::Inline::DSL;
 use Text::Hatena::Constants qw($UNAME_PATTERN);
+use Text::Hatena::Util;
 use URI::Escape qw(uri_escape_utf8);
 
 build_inlines {
@@ -26,10 +27,18 @@ build_inlines {
 
     # [[___]]
     syntax qr{\[\[([^\]]+)\]\]}ix => sub {
-       my ($context, $keyword) = @_;
-       my $escaped_keyword = uri_escape_utf8($keyword);
-       my $link_target = $context->link_target;
-       qq{<a href="https://d.hatena.ne.jp/keyword/$escaped_keyword"$link_target>$keyword</a>};
+        my ($context, $keyword) = @_;
+        my $escaped_keyword = uri_escape_utf8($keyword);
+        my $link_target = $context->link_target;
+        my $prefix = $context->{keyword_url_prefix} || q{https://d.hatena.ne.jp/keyword/};
+        return sprintf(
+            qq{<a href="%s%s" data-hatena-keyword="%s"%s>%s</a>},
+            $prefix,
+            $escaped_keyword,
+            escape_html($keyword),
+            $link_target,
+            $keyword,
+        );
     };
 
 };
