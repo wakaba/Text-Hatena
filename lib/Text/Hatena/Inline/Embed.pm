@@ -6,6 +6,7 @@ use warnings;
 # twitter shortcode
 # [tweet https://twitter.com/motemen/status/170055613668274177]
 
+use Text::Hatena::Util;
 use Text::Hatena::Inline::DSL;
 
 build_inlines {
@@ -23,10 +24,13 @@ build_inlines {
             $attr->{$_} // $+{$_}
         } qw/uri/;
 
+        my $attrs = ' data-hatena-embed=""';
+
         # [tweet http://... lang='ja'] 用
         my $lang;
         if ($uri =~ s{ lang='(\w+)'$}{}) {
             $lang = $1;
+            $attrs .= ' data-hatena-lang="'.escape_html($lang).'"';
         }
 
         my $link_target = $context->link_target;
@@ -43,9 +47,10 @@ build_inlines {
                   undef;
               }
         } || sprintf(
-            '<a href="%s"%s>%s</a>',
+            '<a href="%s"%s%s>%s</a>',
             $uri,
             $link_target,
+            $attrs,
             $uri,
         );
     };

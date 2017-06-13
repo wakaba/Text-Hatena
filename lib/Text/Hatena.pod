@@ -98,8 +98,17 @@ Following custom markups are used:
 
 =item <pre data-lang>
 
-The language name of the super-pre syntax, if specified (e.g. C<perl>
-for C<< >|perl| >>).
+The C<data-lang> attribute value is the language name of the super-pre
+syntax, if specified (e.g. C<perl> for C<< >|perl| >>).
+
+=item <a data-hatena-embed data-hatena-lang>
+
+The C<data-hatena-oembed> attribute is a boolean attribute
+representing whether the link is expected to be expanded to "embeded"
+representation or not.
+
+The C<data-hatena-lang> attribute value is the specification of the
+langauge, if any.
 
 =back
 
