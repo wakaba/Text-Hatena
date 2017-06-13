@@ -100,7 +100,7 @@ sub bookmark_handler {
     my ($context, $uri, $link_target) = @_;
     $uri =~ s/#/%23/;
     sprintf(
-        '<a href="http://b.hatena.ne.jp/entry/%s" class="http-bookmark"%s><img src="http://b.hatena.ne.jp/entry/image/%s" alt="" class="http-bookmark" /></a>',
+        '<a href="https://b.hatena.ne.jp/entry/%s" class="http-bookmark"%s><img src="https://b.hatena.ne.jp/entry/image/%s" alt="" class="http-bookmark" /></a>',
         $uri,
         $link_target,
         $uri,
@@ -110,7 +110,7 @@ sub bookmark_handler {
 sub star_handler {
     my ($context, $uri, $link_target) = @_;
     sprintf(
-        '<img src="http://s.st-hatena.com/entry.count.image?uri=%s" alt="" class="http-star" />',
+        '<img src="https://s.st-hatena.com/entry.count.image?uri=%s" alt="" class="http-star" />',
         uri_escape_utf8($uri),
     );
 }
@@ -118,7 +118,7 @@ sub star_handler {
 sub favicon_handler {
     my ($context, $uri, $link_target) = @_;
     sprintf(
-        '<a href="%s"%s><img src="http://cdn-ak.favicon.st-hatena.com/?url=%s" alt="" class="http-favicon" /></a>',
+        '<a href="%s"%s><img src="https://cdn-ak.favicon.st-hatena.com/?url=%s" alt="" class="http-favicon" /></a>',
         $uri,
         $link_target,
         uri_escape_utf8($uri),
@@ -166,7 +166,7 @@ sub get_title {
 sub barcode_handler {
     my ($context, $uri, $link_target) = @_;
     sprintf(
-        '<a href="%s" class="http-barcode"%s><img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chl=%s" title="%s"/></a>',
+        '<a href="%s" class="http-barcode"%s><img src="https://chart.apis.google.com/chart?chs=150x150&cht=qr&chl=%s" title="%s"/></a>',
         $uri,
         $link_target,
         uri_escape_utf8($uri),
@@ -199,7 +199,7 @@ sub movie_handler {
         }
         my $code = $1;
         return sprintf(
-            '<iframe width="%d" height="%d" src="http://www.youtube.com/embed/%s?wmode=transparent" frameborder="0" allowfullscreen></iframe>',
+            '<iframe width="%d" height="%d" src="https://www.youtube.com/embed/%s?wmode=transparent" frameborder="0" allowfullscreen></iframe>',
             $w,
             $h,
             $code,
@@ -259,7 +259,7 @@ sub detail_handler {
     my $title = get_title($context, $uri) || $uri;
     my $escaped_uri = uri_escape_utf8($uri);
     return sprintf(
-        qq{<iframe marginwidth="0" marginheight="0" src="http://b.hatena.ne.jp/entry.parts?url=%s" scrolling="no" frameborder="0" height="230" width="500"><div class="hatena-bookmark-detail-info"><a href="%s">%s</a><a href="http://b.hatena.ne.jp/entry/%s">はてなブックマーク- %s</a></div></iframe>},
+        qq{<iframe marginwidth="0" marginheight="0" src="https://b.hatena.ne.jp/entry.parts?url=%s" scrolling="no" frameborder="0" height="230" width="500"><div class="hatena-bookmark-detail-info"><a href="%s">%s</a><a href="https://b.hatena.ne.jp/entry/%s">はてなブックマーク- %s</a></div></iframe>},
         $escaped_uri,
         $uri,
         $title,

@@ -70,7 +70,7 @@ http://www.hatena.ne.jp/
 --- input
 [http://www.hatena.ne.jp/:bookmark]
 --- expected
-<p><a href="http://b.hatena.ne.jp/entry/http://www.hatena.ne.jp/" class="http-bookmark" target="_blank"><img src="http://b.hatena.ne.jp/entry/image/http://www.hatena.ne.jp/" alt="" class="http-bookmark" /></a></p>
+<p><a href="https://b.hatena.ne.jp/entry/http://www.hatena.ne.jp/" class="http-bookmark" target="_blank"><img src="https://b.hatena.ne.jp/entry/image/http://www.hatena.ne.jp/" alt="" class="http-bookmark" /></a></p>
 
 === http title
 --- input
@@ -106,38 +106,38 @@ http://www.hatena.ne.jp/
 --- input
 [http://www.hatena.ne.jp/:title:bookmark]
 --- expected
-<p><a href="http://www.hatena.ne.jp/" target="_blank">はてな</a><a href="http://b.hatena.ne.jp/entry/http://www.hatena.ne.jp/" class="http-bookmark" target="_blank"><img src="http://b.hatena.ne.jp/entry/image/http://www.hatena.ne.jp/" alt="" class="http-bookmark" /></a></p>
+<p><a href="http://www.hatena.ne.jp/" target="_blank">はてな</a><a href="https://b.hatena.ne.jp/entry/http://www.hatena.ne.jp/" class="http-bookmark" target="_blank"><img src="https://b.hatena.ne.jp/entry/image/http://www.hatena.ne.jp/" alt="" class="http-bookmark" /></a></p>
 
 === http title + bookmark 2
 --- input
 [http://www.hatena.ne.jp/:title=hatena:bookmark]
 --- expected
-<p><a href="http://www.hatena.ne.jp/" target="_blank">hatena</a><a href="http://b.hatena.ne.jp/entry/http://www.hatena.ne.jp/" class="http-bookmark" target="_blank"><img src="http://b.hatena.ne.jp/entry/image/http://www.hatena.ne.jp/" alt="" class="http-bookmark" /></a></p>
+<p><a href="http://www.hatena.ne.jp/" target="_blank">hatena</a><a href="https://b.hatena.ne.jp/entry/http://www.hatena.ne.jp/" class="http-bookmark" target="_blank"><img src="https://b.hatena.ne.jp/entry/image/http://www.hatena.ne.jp/" alt="" class="http-bookmark" /></a></p>
 
 
 === http bookmark + title 1
 --- input
 [http://www.hatena.ne.jp/:bookmark:title]
 --- expected
-<p><a href="http://b.hatena.ne.jp/entry/http://www.hatena.ne.jp/" class="http-bookmark" target="_blank"><img src="http://b.hatena.ne.jp/entry/image/http://www.hatena.ne.jp/" alt="" class="http-bookmark" /></a><a href="http://www.hatena.ne.jp/" target="_blank">はてな</a></p>
+<p><a href="https://b.hatena.ne.jp/entry/http://www.hatena.ne.jp/" class="http-bookmark" target="_blank"><img src="https://b.hatena.ne.jp/entry/image/http://www.hatena.ne.jp/" alt="" class="http-bookmark" /></a><a href="http://www.hatena.ne.jp/" target="_blank">はてな</a></p>
 
 === http bookmark + title 2
 --- input
 [http://www.hatena.ne.jp/:bookmark:title=hatena]
 --- expected
-<p><a href="http://b.hatena.ne.jp/entry/http://www.hatena.ne.jp/" class="http-bookmark" target="_blank"><img src="http://b.hatena.ne.jp/entry/image/http://www.hatena.ne.jp/" alt="" class="http-bookmark" /></a><a href="http://www.hatena.ne.jp/" target="_blank">hatena</a></p>
+<p><a href="https://b.hatena.ne.jp/entry/http://www.hatena.ne.jp/" class="http-bookmark" target="_blank"><img src="https://b.hatena.ne.jp/entry/image/http://www.hatena.ne.jp/" alt="" class="http-bookmark" /></a><a href="http://www.hatena.ne.jp/" target="_blank">hatena</a></p>
 
 === http bookmark 2 (#)
 --- input
 [http://d.hatena.ne.jp/lionfan/20080723#1216833707:bookmark]
 --- expected
-<p><a href="http://b.hatena.ne.jp/entry/http://d.hatena.ne.jp/lionfan/20080723%231216833707" class="http-bookmark" target="_blank"><img src="http://b.hatena.ne.jp/entry/image/http://d.hatena.ne.jp/lionfan/20080723%231216833707" alt="" class="http-bookmark"></a></p>
+<p><a href="https://b.hatena.ne.jp/entry/http://d.hatena.ne.jp/lionfan/20080723%231216833707" class="http-bookmark" target="_blank"><img src="https://b.hatena.ne.jp/entry/image/http://d.hatena.ne.jp/lionfan/20080723%231216833707" alt="" class="http-bookmark"></a></p>
 
 === http bookmark 3 (?)
 --- input
 [http://gigazine.net/index.php?/news/comments/20080723_psp_3000/:bookmark]
 --- expected
-<p><a href="http://b.hatena.ne.jp/entry/http://gigazine.net/index.php?/news/comments/20080723_psp_3000/" class="http-bookmark" target="_blank"><img src="http://b.hatena.ne.jp/entry/image/http://gigazine.net/index.php?/news/comments/20080723_psp_3000/" alt="" class="http-bookmark"></a></p>
+<p><a href="https://b.hatena.ne.jp/entry/http://gigazine.net/index.php?/news/comments/20080723_psp_3000/" class="http-bookmark" target="_blank"><img src="https://b.hatena.ne.jp/entry/image/http://gigazine.net/index.php?/news/comments/20080723_psp_3000/" alt="" class="http-bookmark"></a></p>
 
 === <>
 --- input
@@ -167,55 +167,55 @@ http://www.hatena.ne.jp/はてな
 --- input
 [http://www.youtube.com/watch?v=D5V28l7FyHA:movie]
 --- expected
-<p><iframe width="420" height="315" src="http://www.youtube.com/embed/D5V28l7FyHA?wmode=transparent" frameborder="0" allowfullscreen></iframe></p>
+<p><iframe width="420" height="315" src="https://www.youtube.com/embed/D5V28l7FyHA?wmode=transparent" frameborder="0" allowfullscreen></iframe></p>
 
 === movie YouTube jp
 --- input
 [http://jp.youtube.com/watch?v=D5V28l7FyHA:movie]
 --- expected
-<p><iframe width="420" height="315" src="http://www.youtube.com/embed/D5V28l7FyHA?wmode=transparent" frameborder="0" allowfullscreen></iframe></p>
+<p><iframe width="420" height="315" src="https://www.youtube.com/embed/D5V28l7FyHA?wmode=transparent" frameborder="0" allowfullscreen></iframe></p>
 
 === movie YouTube without bracket
 --- input
 http://www.youtube.com/watch?v=D5V28l7FyHA:movie
 --- expected
-<p><iframe width="420" height="315" src="http://www.youtube.com/embed/D5V28l7FyHA?wmode=transparent" frameborder="0" allowfullscreen></iframe></p>
+<p><iframe width="420" height="315" src="https://www.youtube.com/embed/D5V28l7FyHA?wmode=transparent" frameborder="0" allowfullscreen></iframe></p>
 
 === movie YouTube + query
 --- input
 [http://www.youtube.com/watch?v=D5V28l7FyHA&feature=plcp&context=C30f22f1UDOEgsToPDskIBRKR_YtLEXvdxtCEw5nzD:movie]
 --- expected
-<p><iframe width="420" height="315" src="http://www.youtube.com/embed/D5V28l7FyHA?wmode=transparent" frameborder="0" allowfullscreen></iframe></p>
+<p><iframe width="420" height="315" src="https://www.youtube.com/embed/D5V28l7FyHA?wmode=transparent" frameborder="0" allowfullscreen></iframe></p>
 
 === movie youtube:small
 --- input
 [http://www.youtube.com/watch?v=D5V28l7FyHA:movie:small]
 --- expected
-<p><iframe width="300" height="225" src="http://www.youtube.com/embed/D5V28l7FyHA?wmode=transparent" frameborder="0" allowfullscreen></iframe></p>
+<p><iframe width="300" height="225" src="https://www.youtube.com/embed/D5V28l7FyHA?wmode=transparent" frameborder="0" allowfullscreen></iframe></p>
 
 === movie youtube:w
 --- input
 [http://www.youtube.com/watch?v=D5V28l7FyHA:movie:w480]
 --- expected
-<p><iframe width="480" height="360" src="http://www.youtube.com/embed/D5V28l7FyHA?wmode=transparent" frameborder="0" allowfullscreen></iframe></p>
+<p><iframe width="480" height="360" src="https://www.youtube.com/embed/D5V28l7FyHA?wmode=transparent" frameborder="0" allowfullscreen></iframe></p>
 
 === movie youtube:h
 --- input
 [http://www.youtube.com/watch?v=D5V28l7FyHA:movie:h360]
 --- expected
-<p><iframe width="480" height="360" src="http://www.youtube.com/embed/D5V28l7FyHA?wmode=transparent" frameborder="0" allowfullscreen></iframe></p>
+<p><iframe width="480" height="360" src="https://www.youtube.com/embed/D5V28l7FyHA?wmode=transparent" frameborder="0" allowfullscreen></iframe></p>
 
 === movie youtube:h without bracket
 --- input
 http://www.youtube.com/watch?v=D5V28l7FyHA:movie:h360
 --- expected
-<p><iframe width="480" height="360" src="http://www.youtube.com/embed/D5V28l7FyHA?wmode=transparent" frameborder="0" allowfullscreen></iframe></p>
+<p><iframe width="480" height="360" src="https://www.youtube.com/embed/D5V28l7FyHA?wmode=transparent" frameborder="0" allowfullscreen></iframe></p>
 
 === movie YouTube include hyphen
 --- input
 [http://www.youtube.com/watch?v=9x-XAeRN3NM:movie]
 --- expected
-<p><iframe width="420" height="315" src="http://www.youtube.com/embed/9x-XAeRN3NM?wmode=transparent" frameborder="0" allowfullscreen></iframe></p>
+<p><iframe width="420" height="315" src="https://www.youtube.com/embed/9x-XAeRN3NM?wmode=transparent" frameborder="0" allowfullscreen></iframe></p>
 
 === movie ugomemo
 --- input
@@ -264,19 +264,19 @@ http://www.youtube.com/watch?v=D5V28l7FyHA:movie:h360
 --- input
 [http://www.hatena.ne.jp/:barcode]
 --- expected
-<p><a href="http://www.hatena.ne.jp/" class="http-barcode" target="_blank"><img src="http://chart.apis.google.com/chart?chs=150x150&amp;cht=qr&amp;chl=http%3A%2F%2Fwww.hatena.ne.jp%2F" title="http://www.hatena.ne.jp/" /></a></p>
+<p><a href="http://www.hatena.ne.jp/" class="http-barcode" target="_blank"><img src="https://chart.apis.google.com/chart?chs=150x150&amp;cht=qr&amp;chl=http%3A%2F%2Fwww.hatena.ne.jp%2F" title="http://www.hatena.ne.jp/" /></a></p>
 
 === detail
 --- input
 [http://www.hatena.ne.jp/:detail]
 --- expected
-<p><iframe marginwidth="0" marginheight="0" src="http://b.hatena.ne.jp/entry.parts?url=http%3A%2F%2Fwww.hatena.ne.jp%2F" scrolling="no" frameborder="0" height="230" width="500"><div class="hatena-bookmark-detail-info"><a href="http://www.hatena.ne.jp/">はてな</a><a href="http://b.hatena.ne.jp/entry/http%3A%2F%2Fwww.hatena.ne.jp%2F">はてなブックマーク- はてな</a></div></iframe></p>
+<p><iframe marginwidth="0" marginheight="0" src="https://b.hatena.ne.jp/entry.parts?url=http%3A%2F%2Fwww.hatena.ne.jp%2F" scrolling="no" frameborder="0" height="230" width="500"><div class="hatena-bookmark-detail-info"><a href="http://www.hatena.ne.jp/">はてな</a><a href="https://b.hatena.ne.jp/entry/http%3A%2F%2Fwww.hatena.ne.jp%2F">はてなブックマーク- はてな</a></div></iframe></p>
 
 === detail encoded
 --- input
 [http://ja.wikipedia.org/wiki/%E3%81%AF%E3%81%A6%E3%81%AA:detail]
 --- expected
-<p><iframe marginwidth="0" marginheight="0" src="http://b.hatena.ne.jp/entry.parts?url=http%3A%2F%2Fja.wikipedia.org%2Fwiki%2F%25E3%2581%25AF%25E3%2581%25A6%25E3%2581%25AA" scrolling="no" frameborder="0" height="230" width="500"><div class="hatena-bookmark-detail-info"><a href="http://ja.wikipedia.org/wiki/%E3%81%AF%E3%81%A6%E3%81%AA">はてな - Wikipedia</a><a href="http://b.hatena.ne.jp/entry/http%3A%2F%2Fja.wikipedia.org%2Fwiki%2F%25E3%2581%25AF%25E3%2581%25A6%25E3%2581%25AA">はてなブックマーク- はてな - Wikipedia</a></div></iframe></p>
+<p><iframe marginwidth="0" marginheight="0" src="https://b.hatena.ne.jp/entry.parts?url=http%3A%2F%2Fja.wikipedia.org%2Fwiki%2F%25E3%2581%25AF%25E3%2581%25A6%25E3%2581%25AA" scrolling="no" frameborder="0" height="230" width="500"><div class="hatena-bookmark-detail-info"><a href="http://ja.wikipedia.org/wiki/%E3%81%AF%E3%81%A6%E3%81%AA">はてな - Wikipedia</a><a href="https://b.hatena.ne.jp/entry/http%3A%2F%2Fja.wikipedia.org%2Fwiki%2F%25E3%2581%25AF%25E3%2581%25A6%25E3%2581%25AA">はてなブックマーク- はてな - Wikipedia</a></div></iframe></p>
 
 === title linefeed
 --- input
@@ -289,7 +289,7 @@ bar]
 --- input
 [http://www.hatena.ne.jp/:star]
 --- expected
-<p><img alt="" class="http-star" src="http://s.st-hatena.com/entry.count.image?uri=http%3A%2F%2Fwww.hatena.ne.jp%2F" /></p>
+<p><img alt="" class="http-star" src="https://s.st-hatena.com/entry.count.image?uri=http%3A%2F%2Fwww.hatena.ne.jp%2F" /></p>
 
 === title:bookmark:star
 --- input
@@ -297,17 +297,17 @@ bar]
 --- expected
 <p>
   <a href="http://www.hatena.ne.jp/" target="_blank">はてな</a>
-  <a class="http-bookmark" href="http://b.hatena.ne.jp/entry/http://www.hatena.ne.jp/" target="_blank">
-    <img alt="" class="http-bookmark" src="http://b.hatena.ne.jp/entry/image/http://www.hatena.ne.jp/" />
+  <a class="http-bookmark" href="https://b.hatena.ne.jp/entry/http://www.hatena.ne.jp/" target="_blank">
+    <img alt="" class="http-bookmark" src="https://b.hatena.ne.jp/entry/image/http://www.hatena.ne.jp/" />
   </a>
-  <img alt="" class="http-star" src="http://s.st-hatena.com/entry.count.image?uri=http%3A%2F%2Fwww.hatena.ne.jp%2F" />
+  <img alt="" class="http-star" src="https://s.st-hatena.com/entry.count.image?uri=http%3A%2F%2Fwww.hatena.ne.jp%2F" />
 </p>
 
 === favicon
 --- input
 [http://www.hatena.ne.jp/:favicon]
 --- expected
-<p><a href="http://www.hatena.ne.jp/" target="_blank"><img alt="" class="http-favicon" src="http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fwww.hatena.ne.jp%2F" /></a></p>
+<p><a href="http://www.hatena.ne.jp/" target="_blank"><img alt="" class="http-favicon" src="https://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fwww.hatena.ne.jp%2F" /></a></p>
 
 === favicon:title:bookmark:star
 --- input
@@ -315,11 +315,11 @@ bar]
 --- expected
 <p>
   <a href="http://www.hatena.ne.jp/" target="_blank">
-    <img alt="" class="http-favicon" src="http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fwww.hatena.ne.jp%2F" />
+    <img alt="" class="http-favicon" src="https://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fwww.hatena.ne.jp%2F" />
   </a>
   <a href="http://www.hatena.ne.jp/" target="_blank">はてな</a>
-  <a class="http-bookmark" href="http://b.hatena.ne.jp/entry/http://www.hatena.ne.jp/" target="_blank">
-    <img alt="" class="http-bookmark" src="http://b.hatena.ne.jp/entry/image/http://www.hatena.ne.jp/" />
+  <a class="http-bookmark" href="https://b.hatena.ne.jp/entry/http://www.hatena.ne.jp/" target="_blank">
+    <img alt="" class="http-bookmark" src="https://b.hatena.ne.jp/entry/image/http://www.hatena.ne.jp/" />
   </a>
-  <img alt="" class="http-star" src="http://s.st-hatena.com/entry.count.image?uri=http%3A%2F%2Fwww.hatena.ne.jp%2F" />
+  <img alt="" class="http-star" src="https://s.st-hatena.com/entry.count.image?uri=http%3A%2F%2Fwww.hatena.ne.jp%2F" />
 </p>
