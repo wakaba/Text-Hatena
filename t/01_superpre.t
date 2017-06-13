@@ -110,7 +110,7 @@ END sample.
 Hi
 ||<
 --- expected
-<pre class="code">
+<pre class="code lang-hogelang" data-lang="hogelang">
 Hi
 </pre>
 
@@ -120,7 +120,7 @@ Hi
 Hi
 ||<
 --- expected
-<pre class="code">
+<pre class="code lang-&quot;&gt;&lt;xmp" data-lang="&quot;&gt;&lt;xmp">
 Hi
 </pre>
 

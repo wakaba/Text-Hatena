@@ -40,9 +40,9 @@ sub as_html {
     };
     my $template;
 
-    if ($self->lang && any { $_ eq $self->lang } @{ $context->{available_langs} }) {
+    if ($self->lang) {
         my $content;
-        if ($context->{use_vim}) {
+        if ($context->{use_vim} && any { $_ eq $self->lang } @{ $context->{available_langs} }) {
             require Text::VimColor;
             my $vim = Text::VimColor->new(
                 filetype => $self->lang,
@@ -60,8 +60,13 @@ sub as_html {
             $content = escape_html($code);
         }
 
-        $options = {%$options, lang => escape_html($self->lang), content => $content};
-        $template = q[<pre class="{{= $class }} {{= "lang-$lang" }}" data-lang="{{= $lang }}"{{= $attr }}>{{= $content }}</pre>];
+        my $lang_class = $self->lang;
+        $lang_class =~ s/[\x09\x0A\x0C\x0D\x20]/_/g;
+        $options = {%$options,
+                    lang => escape_html($self->lang),
+                    lang_class => escape_html($lang_class),
+                    content => $content};
+        $template = q[<pre class="{{= $class }} {{= "lang-$lang_class" }}" data-lang="{{= $lang }}"{{= $attr }}>{{= $content }}</pre>];
     } else {
         $options->{content} = escape_html($code);
         $template = q[<pre class="{{= $class }}"{{= $attr }}>{{= $content }}</pre>];

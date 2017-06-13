@@ -71,6 +71,17 @@ not supported (yet).
 Generating exactly same HTML output as Hatena Blog or any other Hatena
 product is I<not> a goal of the module, however.
 
+Following custom markups are used:
+
+=over 4
+
+=item <pre data-lang>
+
+The language name of the super-pre syntax, if specified (e.g. C<perl>
+for C<< >|perl| >>).
+
+=back
+
 =head1 DEPENDENCY
 
 The module requires Perl 5.10 or later.
