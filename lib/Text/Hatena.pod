@@ -60,6 +60,27 @@ syntax definition files.  Defaulted to true.
 
 The method returns the created parser object.
 
+=item $arrayref = $parser->stash->{footnotes}
+
+An array reference of footnotes, if any.  An item is a hash reference
+representing a footnote, with following key/value pairs:
+
+=over 4
+
+=item number => $string
+
+The reference number of the footnote.
+
+=item title => $string
+
+The "title" of the footnote.
+
+=item note => $string
+
+The main text of the footnote.
+
+=back
+
 =back
 
 =head1 SYNTAX COMPATIBILITY
