@@ -168,49 +168,9 @@ sub link_target {
 
 1;
 
-__END__
-
-=head1 NAME
-
-Text::Hatena - The new "Text-to-HTML converter" with Hatena syntax.
-
-=head1 SYNOPSIS
-
-  use Text::Hatena;
-
-  my $parser = Text::Hatena->new;
-  my $html = $parser->parse($string);
-
-  # Text::Hatena 0.16 style
-  my $html = $parser->html;
-
-  # Text::Hatena 0.20 style
-  my $html = Text::Hatena->parse($string);
-
-  # Text::Xatena style
-  my $html = $parser->format($string);
-
-=head1 DESCRIPTION
-
-Text::Hatena is a text-to-html converter.
-
-=head1 SYNTAX
-
-
-
-=head1 AUTHOR
-
-L<cho45 E<lt>cho45@lowreal.netE<gt>>
-
-L<onishi E<lt>yasuhiro.onishi@gmail.comE<gt>>
-
-=head1 SEE ALSO
-
-L<Text::Xatena>
-
-L<http://hatenadiary.g.hatena.ne.jp/keyword/%E3%81%AF%E3%81%A6%E3%81%AA%E8%A8%98%E6%B3%95%E4%B8%80%E8%A6%A7>
-
 =head1 LICENSE
+
+Copyright (c) 2013 by L<cho45 <cho45@lowreal.net>>.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
