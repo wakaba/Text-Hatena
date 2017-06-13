@@ -62,19 +62,19 @@ build_inlines {
             my $date = substr($fid,0,8);
             if ($context->{mobile}) {
                 # 081117 center やめる
-                my $img = qq|<img src="http://cdn-ak.f.st-hatena.com/images/fotolife/$firstchar/$user/$date/${fid}.$ext"$MICRODATA_IMAGE_ATTR>|;
+                my $img = qq|<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/$firstchar/$user/$date/${fid}.$ext"$MICRODATA_IMAGE_ATTR>|;
                 my $anchor_or_img = $type =~ /image/i ? qq|<a href="http://f.hatena.ne.jp/mobile/$user/$fid"$link_target$MICRODATA_ANCHOR_ATTR>$img</a>| : $img;
                 return qq|<span itemscope itemtype="http://schema.org/Photograph">$anchor_or_img</span>|;
             } else {
                 my $class = '';
                 my @style = ();
-                my $src = "http://cdn-ak.f.st-hatena.com/images/fotolife/$firstchar/$user/$date/${fid}.$ext";
+                my $src = "https://cdn-ak.f.st-hatena.com/images/fotolife/$firstchar/$user/$date/${fid}.$ext";
                 for my $option (split /[:,]/, $options) {
                     $option or next;
                     if ($option eq 'small') {
-                        $src = "http://cdn-ak.f.st-hatena.com/images/fotolife/$firstchar/$user/$date/${fid}_m.gif";
+                        $src = "https://cdn-ak.f.st-hatena.com/images/fotolife/$firstchar/$user/$date/${fid}_m.gif";
                     } elsif ($option eq 'medium') {
-                        $src = "http://cdn-ak.f.st-hatena.com/images/fotolife/$firstchar/$user/$date/${fid}_120.jpg";
+                        $src = "https://cdn-ak.f.st-hatena.com/images/fotolife/$firstchar/$user/$date/${fid}_120.jpg";
                     } elsif ($option eq 'right') {
                         $class .= " hatena-image-right";
                     } elsif ($option eq 'left') {

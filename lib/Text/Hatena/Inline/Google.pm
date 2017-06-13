@@ -15,11 +15,11 @@ build_inlines {
         my $esc_word = uri_escape_utf8($word);
         if ($type =~ /^news$/i) {
             $esc_word = uri_escape_utf8($word);
-            return qq|<a href="http://news.google.co.jp/news?q=$esc_word&ie=utf-8&oe=utf-8"$link_target>google:$type:$word</a>|;
+            return qq|<a href="https://news.google.co.jp/news?q=$esc_word&ie=utf-8&oe=utf-8"$link_target>google:$type:$word</a>|;
         } elsif ($type =~ /^image/i) {
-            return qq|<a href="http://images.google.com/images?q=$esc_word&ie=utf-8&oe=utf-8"$link_target>google:$type:$word</a>|;
+            return qq|<a href="https://images.google.com/images?q=$esc_word&ie=utf-8&oe=utf-8"$link_target>google:$type:$word</a>|;
         } else {
-            return qq|<a href="http://www.google.com/search?q=$esc_word&ie=utf-8&oe=utf-8"$link_target>google:$word</a>|;
+            return qq|<a href="https://www.google.com/search?q=$esc_word&ie=utf-8&oe=utf-8"$link_target>google:$word</a>|;
         }
     };
 };

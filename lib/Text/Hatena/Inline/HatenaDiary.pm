@@ -30,7 +30,7 @@ build_inlines {
         $date       ||= '';
         $delim      ||= '';
         $section    ||= '';
-        my $urlbase = 'http://d.hatena.ne.jp/';
+        my $urlbase = 'https://d.hatena.ne.jp/';
         if ($context->stash->{mobile}) {
             $date = $date ? "?date=$date" : '';
             $date .= "#$section" if $section;

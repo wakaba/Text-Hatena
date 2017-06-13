@@ -39,7 +39,7 @@ build_inlines {
                 my $link_text = encode_entities($checkin->{spot}->{spot_name}, '<>&');
                 my $lat = $checkin->{spot}->{lat};
                 my $lng = $checkin->{spot}->{lon};
-                my $map_img_url = qq{http://maps.google.com/maps/api/staticmap?center=$lat,$lng&zoom=14&size=100x100&sensor=false&markers=|$lat,$lng|};
+                my $map_img_url = qq{https://maps.google.com/maps/api/staticmap?center=$lat,$lng&zoom=14&size=100x100&sensor=false&markers=|$lat,$lng|};
                 $map_img = qq{<img src="$map_img_url"> };
 
                 $context->cache->set($name . '.link_text', $link_text);

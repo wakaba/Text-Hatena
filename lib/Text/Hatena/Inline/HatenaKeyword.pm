@@ -29,7 +29,7 @@ build_inlines {
        my ($context, $keyword) = @_;
        my $escaped_keyword = uri_escape_utf8($keyword);
        my $link_target = $context->link_target;
-       qq{<a href="http://d.hatena.ne.jp/keyword/$escaped_keyword"$link_target>$keyword</a>};
+       qq{<a href="https://d.hatena.ne.jp/keyword/$escaped_keyword"$link_target>$keyword</a>};
     };
 
 };

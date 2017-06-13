@@ -26,17 +26,17 @@ build_inlines {
         if ($type && lc $type eq 'icon') {
             my $pre = substr($user, 0, 2);
             sprintf(
-            q{<a href="%s%s/" class="hatena-id-icon"><img src="http://cdn1.www.st-hatena.com/users/%s/%s/profile.gif" width="16" height="16" alt="id:%s" class="hatena-id-icon"></a>},
+            q{<a href="%s%s/" class="hatena-id-icon"><img src="https://cdn1.www.st-hatena.com/users/%s/%s/profile.gif" width="16" height="16" alt="id:%s" class="hatena-id-icon"></a>},
             $urlbase, $user, $pre, $user, $user);
         } elsif ($type && lc $type eq 'image') {
             my $pre = substr($user, 0, 2);
             sprintf(
-            q{<a href="%s%s/" class="hatena-id-image"><img src="http://cdn1.www.st-hatena.com/users/%s/%s/profile.gif" width="60" height="60" alt="id:%s" class="hatena-id-image"></a>},
+            q{<a href="%s%s/" class="hatena-id-image"><img src="https://cdn1.www.st-hatena.com/users/%s/%s/profile.gif" width="60" height="60" alt="id:%s" class="hatena-id-image"></a>},
             $urlbase, $user, $pre, $user, $user);
         } elsif ($type && lc $type eq 'detail') {
             my $pre = substr($user, 0, 2);
             sprintf(
-            q{<a href="%s%s/" class="hatena-id-icon"><img src="http://cdn1.www.st-hatena.com/users/%s/%s/profile.gif" width="16" height="16" alt="" class="hatena-id-icon">id:%s</a>},
+            q{<a href="%s%s/" class="hatena-id-icon"><img src="https://cdn1.www.st-hatena.com/users/%s/%s/profile.gif" width="16" height="16" alt="" class="hatena-id-icon">id:%s</a>},
             $urlbase, $user, $pre, $user, $user);
         } elsif ($type =~ m{about|archive}) {
             sprintf '<a href="%s%s/%s">id:%s:%s</a>', $urlbase, $user, $type, $user, $type;

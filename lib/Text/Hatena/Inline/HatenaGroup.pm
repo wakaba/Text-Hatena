@@ -44,7 +44,7 @@ build_inlines {
 
         my $link_target = $context->link_target;
 
-        my $base = sprintf 'http://%s.g.hatena.ne.jp/', $gname;
+        my $base = sprintf 'https://%s.g.hatena.ne.jp/', $gname;
         $base .= sprintf('%s/', $name) if $name;
 
         if ($type eq 'about') {

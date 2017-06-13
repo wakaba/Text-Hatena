@@ -30,7 +30,7 @@ id:onishi:icon
 --- expected
 <p>
   <a class="hatena-id-icon" href="http://test.hatena.ne.jp/onishi/">
-    <img alt="id:onishi" class="hatena-id-icon" height="16" src="http://cdn1.www.st-hatena.com/users/on/onishi/profile.gif" width="16"></img>
+    <img alt="id:onishi" class="hatena-id-icon" height="16" src="https://cdn1.www.st-hatena.com/users/on/onishi/profile.gif" width="16"></img>
   </a>
 </p>
 
@@ -40,7 +40,7 @@ id:onishi:image
 --- expected
 <p>
   <a class="hatena-id-image" href="http://test.hatena.ne.jp/onishi/">
-    <img alt="id:onishi" class="hatena-id-image" height="60" src="http://cdn1.www.st-hatena.com/users/on/onishi/profile.gif" width="60"></img>
+    <img alt="id:onishi" class="hatena-id-image" height="60" src="https://cdn1.www.st-hatena.com/users/on/onishi/profile.gif" width="60"></img>
   </a>
 </p>
 
@@ -50,7 +50,7 @@ id:onishi:detail
 --- expected
 <p>
   <a href="http://test.hatena.ne.jp/onishi/" class="hatena-id-icon">
-    <img src="http://cdn1.www.st-hatena.com/users/on/onishi/profile.gif" width="16" height="16" alt="" class="hatena-id-icon">
+    <img src="https://cdn1.www.st-hatena.com/users/on/onishi/profile.gif" width="16" height="16" alt="" class="hatena-id-icon">
     id:onishi
   </a>
 </p>
