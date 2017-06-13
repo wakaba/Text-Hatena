@@ -38,8 +38,13 @@ key/value pair arguments:
 
 A L<LWP::UserAgent> object, used for any network access happened as
 part of text to HTML convertion.  If no C<ua> option is specified, a
-new L<LWP::UserAgent> object is created.  If an C<undef> value is
+new L<LWP::UserAgent> object is created (apparently this requires the
+L<LWP::UserAgent> module available).  If an C<undef> value is
 explicitly specified, network access is disabled.
+
+If anything other than the C<undef> value is specified to this option,
+oEmbed support is enabled.  In this case modules L<Any::Moose> and
+L<Web::oEmbed> are required.
 
 =item urlbase => $string
 
@@ -47,8 +52,9 @@ XXX
 
 =item use_vim => $boolean
 
-Whether syntax highlighting using C<Text::Vim> module is enabled or
-not.  Defaulted to true.
+Whether syntax highlighting using L<Text::VimColor> module is enabled
+or not.  Note that that module requires L<Text::VimColor>, C<vim>, and
+syntax definition files.  Defaulted to true.
 
 =back
 
@@ -56,11 +62,22 @@ The method returns the created parser object.
 
 =back
 
+=head1 SYNTAX COMPATIBILITY
+
+This module is expected to be compatible with Hatena Blog, although
+some features of the Hatena syntax as implemented by Hatena Blog are
+not supported (yet).
+
+Generating exactly same HTML output as Hatena Blog or any other Hatena
+product is I<not> a goal of the module, however.
+
 =head1 DEPENDENCY
 
 The module requires Perl 5.10 or later.
 
-See C<cpanfile> for additional required modules.
+It also requires some Perl modules.  Additionally, as mentioned in
+earlier section of this documentation, some features require more
+modules.  See C<cpanfile> for the complete list of required modules.
 
 =head1 AUTHORS
 

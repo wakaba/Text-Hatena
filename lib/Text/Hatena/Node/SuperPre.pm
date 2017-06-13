@@ -6,7 +6,6 @@ use base qw(Text::Hatena::Node);
 use Encode qw(decode_utf8 encode_utf8);
 use List::MoreUtils qw(any);
 use Text::Hatena::Util;
-use Text::VimColor;
 use constant {
     BEGINNING => qr/^>\|([^|]*)\|$/,
     ENDOFNODE => qr/^\|\|<$/,
@@ -44,6 +43,7 @@ sub as_html {
     if ($self->lang && any { $_ eq $self->lang } @{ $context->{available_langs} }) {
         my $content;
         if ($context->{use_vim}) {
+            require Text::VimColor;
             my $vim = Text::VimColor->new(
                 filetype => $self->lang,
                 vim_path => $ENV{VIM_PATH} || VIM_PATH,

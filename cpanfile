@@ -1,4 +1,3 @@
-requires 'Any::Moose';
 requires 'Carp';
 requires 'Class::Accessor::Fast';
 requires 'Class::Accessor::Lvalue::Fast';
@@ -13,14 +12,15 @@ requires 'JSON::XS';
 requires 'List::MoreUtils';
 requires 'Regexp::Assemble';
 requires 'Text::MicroTemplate';
-requires 'Text::VimColor';
 requires 'UNIVERSAL::require';
 requires 'URI::Escape';
-requires 'Web::oEmbed';
 
 ## optional
 requires 'Cache::MemoryCache';
 requires 'LWP::UserAgent';
+requires 'Any::Moose';
+requires 'Web::oEmbed';
+requires 'Text::VimColor';
 
 on build => sub {
     requires 'AnyEvent::HTTP';
