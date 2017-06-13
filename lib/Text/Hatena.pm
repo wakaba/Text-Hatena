@@ -172,6 +172,8 @@ sub link_target {
 
 Copyright (c) 2013 by L<cho45 <cho45@lowreal.net>>.
 
+Copyright 2017 Wakaba <wakaba@suikawiki.org>.
+
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 

@@ -23,11 +23,52 @@ Text::Hatena - The new "Text-to-HTML converter" with Hatena syntax.
 
 Text::Hatena is a text-to-html converter.
 
-=head1 SYNTAX
+=head1 METHODS
 
+=over 4
 
+=item $parser = Text::Hatena->new ($name => $value, ...)
 
-=head1 AUTHOR
+Create a parser.  It accepts following options are zero or more
+key/value pair arguments:
+
+=over 4
+
+=item ua => $ua
+
+A L<LWP::UserAgent> object, used for any network access happened as
+part of text to HTML convertion.  If no C<ua> option is specified, a
+new L<LWP::UserAgent> object is created.  If an C<undef> value is
+explicitly specified, network access is disabled.
+
+=item urlbase => $string
+
+XXX
+
+=item use_vim => $boolean
+
+Whether syntax highlighting using C<Text::Vim> module is enabled or
+not.  Defaulted to true.
+
+=back
+
+The method returns the created parser object.
+
+=back
+
+=head1 DEPENDENCY
+
+The module requires Perl 5.10 or later.
+
+See C<cpanfile> for additional required modules.
+
+=head1 AUTHORS
+
+Wakaba <wakaba@suikawiki.org>.
+
+This is a fork of the original C<Text::Hatena> module, 8 Oct 2013
+<https://github.com/onishi/Text-Hatena>, which is the latest public
+release of the module.  The original authors of the module are:
 
 L<cho45 E<lt>cho45@lowreal.netE<gt>>
 
@@ -37,11 +78,13 @@ L<onishi E<lt>yasuhiro.onishi@gmail.comE<gt>>
 
 L<Text::Xatena>
 
-L<http://hatenadiary.g.hatena.ne.jp/keyword/%E3%81%AF%E3%81%A6%E3%81%AA%E8%A8%98%E6%B3%95%E4%B8%80%E8%A6%A7>
+L<https://hatenadiary.g.hatena.ne.jp/keyword/%E3%81%AF%E3%81%A6%E3%81%AA%E8%A8%98%E6%B3%95%E4%B8%80%E8%A6%A7>
 
 =head1 LICENSE
 
 Copyright (c) 2013 by L<cho45 <cho45@lowreal.net>>.
+
+Copyright 2017 Wakaba <wakaba@suikawiki.org>.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
