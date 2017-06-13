@@ -77,6 +77,7 @@ sub new {
     $opts{enable_unlink}   //= 1;
     $opts{use_vim}         //= 1;
     $opts{expand_movie}    //= 1;
+    $opts{expand_map}      //= 1;
     $opts{use_google_chart} //= 1;
     $opts{use_hatena_bookmark_detail} //= 1;
 

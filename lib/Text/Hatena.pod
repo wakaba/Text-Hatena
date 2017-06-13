@@ -34,6 +34,11 @@ key/value pair arguments:
 
 =over 4
 
+=item expand_map => $boolean
+
+Whether the C<map:> syntax should be expanded to an embedded Hatena
+Map or not.  Defaulted to true.
+
 =item expand_movie => $boolean
 
 Whether the C<:movie> syntax should be expanded to a movie player or
@@ -146,6 +151,27 @@ height, if any.
 =item <a data-hatena-keyword>
 
 The attribute value is the keyword the element is linked to.
+
+=item <hatena-map lat lon width height type t link target>
+
+Represent a C<map:> syntax text, if C<expand_map> option is false.
+
+The C<lat> attribute value is the latitude.  The C<lon> attribute
+value is the longitude.
+
+The C<width> attribute value represents the rendered width.  The
+C<height> attribute value represents the rendered height.
+
+The C<type> attribute value represents the type of the map.  If
+specified, the value is one of C<map>, C<satellite>, and C<hybrid>.
+
+The C<link> attribute is specified if a map page with the specified
+latitude and longitude selected should be linked rather than embedded.
+The C<target> attribute specifies the target window (which has the
+same semantics with the C<target> attribute of an HTML C<target>
+attribute).
+
+The C<t> attribute value represents the C<t> parameter, if specified.
 
 =item <hatena-tex>
 

@@ -45,7 +45,11 @@ build_inlines {
         if ($width > 600 || $width < 100) {
             ($width, $height) = (200, 150);
         }
-        return qq|<iframe src="http://map.hatena.ne.jp/frame?x=$x&y=$y&type=$type&width=$width&height=$height" name="map" marginwidth="0" marginheight="0" vspace="0" hspace="0" frameborder="0" height="$height" scrolling="no" width="$width"><a href="http://map.hatena.ne.jp/?x=$x&y=$y&z=4"$link_target>$name</a></iframe>|;
+        if ($context->{expand_map}) {
+            return qq|<iframe src="http://map.hatena.ne.jp/frame?x=$x&y=$y&type=$type&width=$width&height=$height" name="map" marginwidth="0" marginheight="0" vspace="0" hspace="0" frameborder="0" height="$height" scrolling="no" width="$width"><a href="http://map.hatena.ne.jp/?x=$x&y=$y&z=4"$link_target>$name</a></iframe>|;
+        } else {
+            return qq{<hatena-map lat="$y" lon="$x" type="$type" width="$width" height="$height"></hatena-map>};
+        }
     };
 
     # [map:___:___] (Haiku-compatible style)
@@ -53,21 +57,38 @@ build_inlines {
         my ($context, $name, $y, $x) = @_;
         my $link_target = $context->link_target;
         my ($width, $height) = (200, 150);
-        return qq|<iframe src="http://map.hatena.ne.jp/frame?x=$x&y=$y&type=map&width=$width&height=$height" name="map" marginwidth="0" marginheight="0" vspace="0" hspace="0" frameborder="0" height="$height" scrolling="no" width="$width"><a href="http://map.hatena.ne.jp/?x=$x&y=$y&z=4"$link_target>$name</a></iframe>|;
+        if ($context->{expand_map}) {
+            return qq|<iframe src="http://map.hatena.ne.jp/frame?x=$x&y=$y&type=map&width=$width&height=$height" name="map" marginwidth="0" marginheight="0" vspace="0" hspace="0" frameborder="0" height="$height" scrolling="no" width="$width"><a href="http://map.hatena.ne.jp/?x=$x&y=$y&z=4"$link_target>$name</a></iframe>|;
+        } else {
+            return qq{<hatena-map lat="$y" lon="$x"></hatena-map>};
+        }
     };
 
     # [map:x___y___]
     syntax qr{\[?(map:x(\-?[\d\.]+)y(\-?[\d\.]+))\]?}i => sub {
         my ($context, $name, $x, $y) = @_;
         my $link_target = $context->link_target;
-        return qq|<a href="http://map.hatena.ne.jp/?x=$x&y=$y&z=4"$link_target>$name</a>|;
+        if ($context->{expand_map}) {
+            return qq|<a href="http://map.hatena.ne.jp/?x=$x&y=$y&z=4"$link_target>$name</a>|;
+        } else {
+            return qq{<hatena-map lat="$y" lon="$x" link="" $link_target></hatena-map>};
+        }
     };
 
     # [map:x:___,y:___]
     # [map:x:___,y:___,t:___]
-    syntax qr{\[?map:((?:x:[\d\.]+,y:[\d\.]+(?:,t:\d+)?\|?)+)\]?}i => sub {
-        my ($context, $point) = @_;
-        return qq|<iframe src="/mapx?points=$point" name="map" marginwidth="0" marginheight="0" vspace="0" hspace="0" frameborder="0" height="300" width="100%" scrolling="no"></iframe>|;
+    syntax qr{\[?map:((?:x:([\d\.]+),y:([\d\.]+)(?:,t:(\d+))?\|?)+)\]?}i => sub {
+        my ($context, $point, $x, $y, $t) = @_;
+        if ($context->{expand_map}) {
+            return qq|<iframe src="https://d.hatena.ne.jp/mapx?points=$point" name="map" marginwidth="0" marginheight="0" vspace="0" hspace="0" frameborder="0" height="300" width="100%" scrolling="no"></iframe>|;
+        } else {
+            return sprintf(
+                q{<hatena-map lat="%s" lon="%s"%s></hatena-map>},
+                $y,
+                $x,
+                (defined $t ? qq{t="$t"} : ''),
+            );
+        }
     };
 
     # XXX this xyntax is not testd at all in 052_map.t
