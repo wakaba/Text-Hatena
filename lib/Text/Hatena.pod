@@ -121,7 +121,9 @@ The main text of the footnote.
 This module is expected to be compatible with Hatena Blog, although
 some features of the Hatena syntax as implemented by Hatena Blog are
 not supported (yet).  Various extensions implemented by Hatena Group
-are also supported.
+are also supported (except for C<bbs:>
+<http://g.hatena.ne.jp/help#syntaxbbs> and C<task:>
+C<http://g.hatena.ne.jp/help#tasksyntax>, for now).
 
 Generating exactly same HTML output as Hatena Blog or any other Hatena
 product is I<not> a goal of the module, however.
@@ -206,6 +208,18 @@ The attribute value is the timestamp of the heading as a Unix time
 integer, as specified by the timed heading syntax
 <https://hatenadiary.g.hatena.ne.jp/keyword/%E6%99%82%E5%88%BB%E4%BB%98%E3%81%8D%E3%81%AE%E8%A6%8B%E5%87%BA%E3%81%97%E3%82%92%E3%81%A4%E3%81%91%E3%82%8B%EF%BC%88%E6%99%82%E5%88%BB%E4%BB%98%E3%81%8D%E8%A6%8B%E5%87%BA%E3%81%97%E8%A8%98%E6%B3%95%EF%BC%89>.
 
+=item <hatena-asin asin type target>
+
+Represents a link to Amazon.
+
+The C<type> attribute value specifies how it should be rendered.  If
+the value is C<detail>, a summary of the linked product should be
+shown.
+
+The C<target> attribute specifies the target window (which has the
+same semantics with the C<target> attribute of an HTML C<target>
+attribute).
+
 =item <hatena-category name>
 
 The C<name> attribute value is the category to which the section
@@ -219,7 +233,7 @@ Represents an insertion point of the table of contents of the
 document, as specified by the contents syntax
 <http://g.hatena.ne.jp/help#contentssyntax>.
 
-=item <hatena-file fileid type t>
+=item <hatena-file fileid type t target>
 
 Represents a link to file, as specified by the file syntax
 <http://g.hatena.ne.jp/help#filesyntax>.
@@ -232,6 +246,10 @@ attribute is not specified, it should be just a link to the file.
 
 The C<t> attribute value specifies the start position of the file, as
 a number of seconds, when the file is a sound file.
+
+The C<target> attribute specifies the target window (which has the
+same semantics with the C<target> attribute of an HTML C<target>
+attribute) used when the element represents a link.
 
 =item <hatena-hatena>
 
