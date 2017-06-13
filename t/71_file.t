@@ -50,3 +50,33 @@ __END__
 [file:onishi:<script type="javascript">alert("")</script>]
 --- expected
 <p>[file:onishi:<script type="javascript">alert("")</script>]</p>
+
+=== file: (group)
+--- input
+[file:f166680dfed8d9a7]
+--- expected
+<p><hatena-file fileid="f166680dfed8d9a7" target="_blank"></hatena-file></p>
+
+=== file: :image (group)
+--- input
+[file:f166680dfed8d9a7:image]
+--- expected
+<p><hatena-file fileid="f166680dfed8d9a7" target="_blank" type="image"></hatena-file></p>
+
+=== file: :movie (group)
+--- input
+[file:f166680dfed8d9a7:movie]
+--- expected
+<p><hatena-file fileid="f166680dfed8d9a7" target="_blank" type="movie"></hatena-file></p>
+
+=== file: :sound (group)
+--- input
+[file:f166680dfed8d9a7:sound]
+--- expected
+<p><hatena-file fileid="f166680dfed8d9a7" target="_blank" type="sound"></hatena-file></p>
+
+=== file: :sound (group)
+--- input
+[file:f166680dfed8d9a7:sound:1m5s]
+--- expected
+<p><hatena-file fileid="f166680dfed8d9a7" target="_blank" type="sound" t="65"></hatena-file></p>

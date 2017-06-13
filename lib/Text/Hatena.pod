@@ -219,6 +219,20 @@ Represents an insertion point of the table of contents of the
 document, as specified by the contents syntax
 <http://g.hatena.ne.jp/help#contentssyntax>.
 
+=item <hatena-file fileid type t>
+
+Represents a link to file, as specified by the file syntax
+<http://g.hatena.ne.jp/help#filesyntax>.
+
+The C<fileid> attribute value identifies the file.
+
+The C<type> attribute value specifies how the file should be embedded.
+The value is one of C<image>, C<sound>, and C<movie>.  If the
+attribute is not specified, it should be just a link to the file.
+
+The C<t> attribute value specifies the start position of the file, as
+a number of seconds, when the file is a sound file.
+
 =item <hatena-map lat lon width height type t link target>
 
 Represents a C<map:> syntax text, if C<expand_map> option is false.
