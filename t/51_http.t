@@ -221,13 +221,13 @@ http://www.youtube.com/watch?v=D5V28l7FyHA:movie:h360
 --- input
 [http://ugomemo.hatena.ne.jp/0EB03A80BC7D7DBA@DSi/movie/7DD445_086B8A571518B_000:movie]
 --- expected
-<p><object data="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf" type="application/x-shockwave-flash" width="279" height="240"><param name="movie" value="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf"></param><param name="FlashVars" value="did=0EB03A80BC7D7DBA&file=7DD445_086B8A571518B_000"></param></object></p>
+<p><a href="http://ugomemo.hatena.ne.jp/0EB03A80BC7D7DBA@DSi/movie/7DD445_086B8A571518B_000" target="_blank">http://ugomemo.hatena.ne.jp/0EB03A80BC7D7DBA@DSi/movie/7DD445_086B8A571518B_000</a></p>
 
 === movie flipnote
 --- input
 [http://flipnote.hatena.com/0EB03A80BC7D7DBA@DSi/movie/7DD445_086B8A571518B_000:movie]
 --- expected
-<p><object data="http://flipnote.hatena.com/js/flipplayer_s.swf" type="application/x-shockwave-flash" width="279" height="240"><param name="movie" value="http://flipnote.hatena.com/js/flipplayer_s.swf"></param><param name="FlashVars" value="did=0EB03A80BC7D7DBA&file=7DD445_086B8A571518B_000"></param></object></p>
+<p><a href="http://flipnote.hatena.com/0EB03A80BC7D7DBA@DSi/movie/7DD445_086B8A571518B_000" target="_blank">http://flipnote.hatena.com/0EB03A80BC7D7DBA@DSi/movie/7DD445_086B8A571518B_000</a></p>
 
 === movie niconico
 --- input

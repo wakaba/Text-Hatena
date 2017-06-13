@@ -204,19 +204,6 @@ sub movie_handler {
             $h,
             $code,
         );
-    } elsif ($uri =~ m{^http://(ugomemo[.]hatena[.]ne[.]jp|flipnote[.]hatena[.]com)/([0-9A-Fa-f]{16})[@]DSi/movie/([0-9A-Za-z_]{10,30})}) {
-        my ($domain, $did, $file) = ($1, $2, $3);
-        my $swf = {
-            'ugomemo.hatena.ne.jp' => 'http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf',
-            'flipnote.hatena.com' => 'http://flipnote.hatena.com/js/flipplayer_s.swf',
-        }->{$domain};
-        return sprintf(
-            q{<object data="%s" type="application/x-shockwave-flash" width="279" height="240"><param name="movie" value="%s"></param><param name="FlashVars" value="did=%s&file=%s"></param></object>},
-            $swf,
-            $swf,
-            $did,
-            $file,
-        );
     } elsif ($uri =~ m{^http://www.nicovideo.jp/watch/(\w+)}) {
         my $vid = $1;
         return sprintf(

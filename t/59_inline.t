@@ -117,7 +117,7 @@ http://example.com:80/
 [http://example.com/:barcode]
 --- expected
 <p>
-<a href="http://example.com/" class="http-barcode" target="_blank"><img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chl=http%3A%2F%2Fexample.com%2F" title="http://example.com/"/></a>
+<a href="http://example.com/" class="http-barcode" target="_blank"><img src="https://chart.apis.google.com/chart?chs=150x150&cht=qr&chl=http%3A%2F%2Fexample.com%2F" title="http://example.com/"/></a>
 </p>
 
 === link with title
