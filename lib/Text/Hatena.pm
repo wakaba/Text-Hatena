@@ -56,6 +56,7 @@ our $INLINES = build_inlines {
     enable 'Wikipedia';
     enable 'Contents';
     enable 'Presentation';
+    enable 'File';
 };
 
 sub new {
