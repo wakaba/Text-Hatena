@@ -73,10 +73,14 @@ __END__
 :baz:piyo
 --- expected
 <dl>
+  <div>
     <dt>foo</dt>
     <dd>bar</dd>
+  </div>
+  <div>
     <dt>baz</dt>
     <dd>piyo</dd>
+  </div>
 </dl>
 
 === test
@@ -85,10 +89,14 @@ __END__
 :baz:piyo
 --- expected
 <dl>
+  <div>
     <dt>foo</dt>
     <dd><a href="http://www.lowreal.net/" target="_blank">http://www.lowreal.net/</a></dd>
+  </div>
+  <div>
     <dt>baz</dt>
     <dd>piyo</dd>
+  </div>
 </dl>
 
 === test
@@ -97,10 +105,14 @@ __END__
 :baz:piyo
 --- expected
 <dl>
+  <div>
     <dt>foo</dt>
     <dd><a href="http://www.lowreal.net/" target="_blank">http://www.lowreal.net/</a></dd>
+  </div>
+  <div>
     <dt>baz</dt>
     <dd>piyo</dd>
+  </div>
 </dl>
 
 === test
@@ -112,11 +124,15 @@ __END__
 ::piyo
 --- expected
 <dl>
+  <div>
     <dt>foo</dt>
     <dd><a href="http://www.lowreal.net/" target="_blank">http://www.lowreal.net/</a></dd>
+  </div>
+  <div>
     <dt>baz</dt>
     <dd>piyo</dd>
     <dd>piyo</dd>
+  </div>
 </dl>
 
 === test
@@ -152,10 +168,14 @@ test
 test
 --- expected
 <dl>
+  <div>
     <dt>foo</dt>
     <dd>bar</dd>
+  </div>
+  <div>
     <dt>baz</dt>
     <dd>piyo</dd>
+  </div>
 </dl>
 <p>test</p>
 
@@ -220,6 +240,8 @@ test
 :[http://www.hatena.ne.jp]:hatena
 --- expected
 <dl>
+  <div>
     <dt><a href="http://www.hatena.ne.jp" target="_blank">http://www.hatena.ne.jp</a></dt>
     <dd>hatena</dd>
+  </div>
 </dl>

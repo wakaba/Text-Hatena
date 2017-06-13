@@ -32,20 +32,34 @@ sub as_struct {
     for my $line (@$children) {
         if (my ($description) = ($line =~ /^::(.+)/)) {
             push @$ret, +{
+                prefix  => '',
+                suffix  => '',
                 name    => 'dd',
                 content => $context->inline->format($description),
             };
         } else {
             my ($title, $description) = ($line =~ /^:(\[.*?\]|[^:]+)(?::(.*))?$/);
             push @$ret, +{
+                prefix  => '<div>',
+                suffix  => '',
                 name => 'dt',
                 content => $context->inline->format($title),
             };
             push @$ret, +{
+                prefix  => '',
+                suffix  => '',
                 name => 'dd',
                 content => $context->inline->format($description),
             } if $description;
         }
+    }
+
+    my $last = 'dt';
+    for (reverse @$ret) {
+        if ($last eq 'dt') {
+            $_->{suffix} = '</div>';
+        }
+        $last = $_->{name};
     }
 
     $ret;
@@ -57,7 +71,9 @@ sub as_html {
     $context->_tmpl(__PACKAGE__, q[
         <dl>
         ? for (@$items) {
+        {{= $_->{prefix} }}
         <{{= $_->{name} }}>{{= $_->{content} }}</{{= $_->{name} }}>
+        {{= $_->{suffix} }}
         ? }
         </dl>
     ], {

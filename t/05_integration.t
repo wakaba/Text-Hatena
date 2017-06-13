@@ -43,10 +43,14 @@ ok?
     <p>foobar</p>
     <p>barbaz</p>
     <dl>
+      <div>
         <dt>foo</dt>
         <dd>bar</dd>
+      </div>
+      <div>
         <dt>foo</dt>
         <dd>bar</dd>
+      </div>
     </dl>
     <ul>
         <li>list1</li>
