@@ -59,10 +59,12 @@ quote2
 quote
 <<
 --- expected
+<figure class=hatena-blockquote>
 <blockquote cite="http://example.com/">
 	<p>quote</p>
-	<cite><a href="http://example.com/" target="_blank">http://example.com/</a></cite>
 </blockquote>
+<figcaption><a href="http://example.com/" target="_blank">http://example.com/</a></figcaption>
+</figure>
 
 === http
 --- input
@@ -70,10 +72,12 @@ quote
 quote
 <<
 --- expected
+<figure class=hatena-blockquote>
 <blockquote cite="http://example.com/">
 	<p>quote</p>
-	<cite><a href="http://example.com/" target="_blank">Example Web Page</a></cite>
 </blockquote>
+<figcaption><a href="http://example.com/" target="_blank">Example Web Page</a></figcaption>
+</figure>
 
 
 === test

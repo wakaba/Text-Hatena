@@ -36,10 +36,12 @@ sub as_html {
 
     $context->_tmpl(__PACKAGE__, q[
         ? if ($cite) {
-            <blockquote cite="{{= $cite }}">
-                {{= $content }}
-                <cite>{{= $title }}</cite>
-            </blockquote>
+            <figure class=hatena-blockquote>
+                <blockquote cite="{{= $cite }}">
+                    {{= $content }}
+                </blockquote>
+                <figcaption>{{= $title }}</figcaption>
+            </figure>
         ? } else {
             <blockquote>
                 {{= $content }}
