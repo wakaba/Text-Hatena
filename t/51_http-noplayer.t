@@ -168,25 +168,25 @@ http://www.hatena.ne.jp/はてな
 --- input
 [http://www.youtube.com/watch?v=D5V28l7FyHA:movie]
 --- expected
-<p><a href="http://www.youtube.com/watch?v=D5V28l7FyHA" target="_blank" data-hatena-embed="movie" data-hatena-height="315" data-hatena-width="420">http://www.youtube.com/watch?v=D5V28l7FyHA</a></p>
+<p><a href="http://www.youtube.com/watch?v=D5V28l7FyHA" target="_blank" data-hatena-embed="movie">http://www.youtube.com/watch?v=D5V28l7FyHA</a></p>
 
 === movie YouTube jp
 --- input
 [http://jp.youtube.com/watch?v=D5V28l7FyHA:movie]
 --- expected
-<p><a href="http://jp.youtube.com/watch?v=D5V28l7FyHA" target="_blank" data-hatena-embed="movie" data-hatena-height="315" data-hatena-width="420">http://jp.youtube.com/watch?v=D5V28l7FyHA</a></p>
+<p><a href="http://jp.youtube.com/watch?v=D5V28l7FyHA" target="_blank" data-hatena-embed="movie">http://jp.youtube.com/watch?v=D5V28l7FyHA</a></p>
 
 === movie YouTube without bracket
 --- input
 http://www.youtube.com/watch?v=D5V28l7FyHA:movie
 --- expected
-<p><a href="http://www.youtube.com/watch?v=D5V28l7FyHA" target="_blank" data-hatena-embed="movie" data-hatena-height="315" data-hatena-width="420">http://www.youtube.com/watch?v=D5V28l7FyHA</a></p>
+<p><a href="http://www.youtube.com/watch?v=D5V28l7FyHA" target="_blank" data-hatena-embed="movie">http://www.youtube.com/watch?v=D5V28l7FyHA</a></p>
 
 === movie YouTube + query
 --- input
 [http://www.youtube.com/watch?v=D5V28l7FyHA&feature=plcp&context=C30f22f1UDOEgsToPDskIBRKR_YtLEXvdxtCEw5nzD:movie]
 --- expected
-<p><a href="http://www.youtube.com/watch?v=D5V28l7FyHA&feature=plcp&context=C30f22f1UDOEgsToPDskIBRKR_YtLEXvdxtCEw5nzD" target="_blank" data-hatena-embed="movie" data-hatena-height="315" data-hatena-width="420">http://www.youtube.com/watch?v=D5V28l7FyHA&feature=plcp&context=C30f22f1UDOEgsToPDskIBRKR_YtLEXvdxtCEw5nzD</a></p>
+<p><a href="http://www.youtube.com/watch?v=D5V28l7FyHA&feature=plcp&context=C30f22f1UDOEgsToPDskIBRKR_YtLEXvdxtCEw5nzD" target="_blank" data-hatena-embed="movie">http://www.youtube.com/watch?v=D5V28l7FyHA&feature=plcp&context=C30f22f1UDOEgsToPDskIBRKR_YtLEXvdxtCEw5nzD</a></p>
 
 === movie youtube:small
 --- input
@@ -198,49 +198,49 @@ http://www.youtube.com/watch?v=D5V28l7FyHA:movie
 --- input
 [http://www.youtube.com/watch?v=D5V28l7FyHA:movie:w480]
 --- expected
-<p><a href="http://www.youtube.com/watch?v=D5V28l7FyHA" target="_blank" data-hatena-embed="movie" data-hatena-height="360" data-hatena-width="480">http://www.youtube.com/watch?v=D5V28l7FyHA</a></p>
+<p><a href="http://www.youtube.com/watch?v=D5V28l7FyHA" target="_blank" data-hatena-embed="movie" data-hatena-width="480">http://www.youtube.com/watch?v=D5V28l7FyHA</a></p>
 
 === movie youtube:h
 --- input
 [http://www.youtube.com/watch?v=D5V28l7FyHA:movie:h360]
 --- expected
-<p><a href="http://www.youtube.com/watch?v=D5V28l7FyHA" target="_blank" data-hatena-embed="movie" data-hatena-height="360" data-hatena-width="480">http://www.youtube.com/watch?v=D5V28l7FyHA</a></p>
+<p><a href="http://www.youtube.com/watch?v=D5V28l7FyHA" target="_blank" data-hatena-embed="movie" data-hatena-height="360">http://www.youtube.com/watch?v=D5V28l7FyHA</a></p>
 
 === movie youtube:h without bracket
 --- input
 http://www.youtube.com/watch?v=D5V28l7FyHA:movie:h360
 --- expected
-<p><a href="http://www.youtube.com/watch?v=D5V28l7FyHA" target="_blank" data-hatena-embed="movie" data-hatena-height="360" data-hatena-width="480">http://www.youtube.com/watch?v=D5V28l7FyHA</a></p>
+<p><a href="http://www.youtube.com/watch?v=D5V28l7FyHA" target="_blank" data-hatena-embed="movie" data-hatena-height="360">http://www.youtube.com/watch?v=D5V28l7FyHA</a></p>
 
 === movie YouTube include hyphen
 --- input
 [http://www.youtube.com/watch?v=9x-XAeRN3NM:movie]
 --- expected
-<p><a href="http://www.youtube.com/watch?v=9x-XAeRN3NM" target="_blank" data-hatena-embed="movie" data-hatena-height="315" data-hatena-width="420">http://www.youtube.com/watch?v=9x-XAeRN3NM</a></p>
+<p><a href="http://www.youtube.com/watch?v=9x-XAeRN3NM" target="_blank" data-hatena-embed="movie">http://www.youtube.com/watch?v=9x-XAeRN3NM</a></p>
 
 === movie ugomemo
 --- input
 [http://ugomemo.hatena.ne.jp/0EB03A80BC7D7DBA@DSi/movie/7DD445_086B8A571518B_000:movie]
 --- expected
-<p><a href="http://ugomemo.hatena.ne.jp/0EB03A80BC7D7DBA@DSi/movie/7DD445_086B8A571518B_000" target="_blank" data-hatena-embed="movie" data-hatena-height="315" data-hatena-width="420">http://ugomemo.hatena.ne.jp/0EB03A80BC7D7DBA@DSi/movie/7DD445_086B8A571518B_000</a></p>
+<p><a href="http://ugomemo.hatena.ne.jp/0EB03A80BC7D7DBA@DSi/movie/7DD445_086B8A571518B_000" target="_blank" data-hatena-embed="movie">http://ugomemo.hatena.ne.jp/0EB03A80BC7D7DBA@DSi/movie/7DD445_086B8A571518B_000</a></p>
 
 === movie flipnote
 --- input
 [http://flipnote.hatena.com/0EB03A80BC7D7DBA@DSi/movie/7DD445_086B8A571518B_000:movie]
 --- expected
-<p><a href="http://flipnote.hatena.com/0EB03A80BC7D7DBA@DSi/movie/7DD445_086B8A571518B_000" target="_blank" data-hatena-embed="movie" data-hatena-height="315" data-hatena-width="420">http://flipnote.hatena.com/0EB03A80BC7D7DBA@DSi/movie/7DD445_086B8A571518B_000</a></p>
+<p><a href="http://flipnote.hatena.com/0EB03A80BC7D7DBA@DSi/movie/7DD445_086B8A571518B_000" target="_blank" data-hatena-embed="movie">http://flipnote.hatena.com/0EB03A80BC7D7DBA@DSi/movie/7DD445_086B8A571518B_000</a></p>
 
 === movie niconico
 --- input
 [http://www.nicovideo.jp/watch/sm1128042:movie]
 --- expected
-<p><a data-hatena-embed="movie" data-hatena-height="315" data-hatena-width="420" href="http://www.nicovideo.jp/watch/sm1128042" target="_blank">http://www.nicovideo.jp/watch/sm1128042</a></p>
+<p><a data-hatena-embed="movie" href="http://www.nicovideo.jp/watch/sm1128042" target="_blank">http://www.nicovideo.jp/watch/sm1128042</a></p>
 
 === movie not implemented
 --- input
 [http://example.com/:movie]
 --- expected
-<p><a href="http://example.com/" target="_blank" data-hatena-embed="movie" data-hatena-height="315" data-hatena-width="420">http://example.com/</a></p>
+<p><a href="http://example.com/" target="_blank" data-hatena-embed="movie">http://example.com/</a></p>
 
 
 === embed

@@ -221,13 +221,13 @@ http://www.youtube.com/watch?v=D5V28l7FyHA:movie:h360
 --- input
 [http://ugomemo.hatena.ne.jp/0EB03A80BC7D7DBA@DSi/movie/7DD445_086B8A571518B_000:movie]
 --- expected
-<p><a href="http://ugomemo.hatena.ne.jp/0EB03A80BC7D7DBA@DSi/movie/7DD445_086B8A571518B_000" target="_blank" data-hatena-embed="movie" data-hatena-height="315" data-hatena-width="420">http://ugomemo.hatena.ne.jp/0EB03A80BC7D7DBA@DSi/movie/7DD445_086B8A571518B_000</a></p>
+<p><a href="http://ugomemo.hatena.ne.jp/0EB03A80BC7D7DBA@DSi/movie/7DD445_086B8A571518B_000" target="_blank" data-hatena-embed="movie">http://ugomemo.hatena.ne.jp/0EB03A80BC7D7DBA@DSi/movie/7DD445_086B8A571518B_000</a></p>
 
 === movie flipnote
 --- input
 [http://flipnote.hatena.com/0EB03A80BC7D7DBA@DSi/movie/7DD445_086B8A571518B_000:movie]
 --- expected
-<p><a href="http://flipnote.hatena.com/0EB03A80BC7D7DBA@DSi/movie/7DD445_086B8A571518B_000" target="_blank" data-hatena-embed="movie" data-hatena-height="315" data-hatena-width="420">http://flipnote.hatena.com/0EB03A80BC7D7DBA@DSi/movie/7DD445_086B8A571518B_000</a></p>
+<p><a href="http://flipnote.hatena.com/0EB03A80BC7D7DBA@DSi/movie/7DD445_086B8A571518B_000" target="_blank" data-hatena-embed="movie">http://flipnote.hatena.com/0EB03A80BC7D7DBA@DSi/movie/7DD445_086B8A571518B_000</a></p>
 
 === movie niconico
 --- input
@@ -239,7 +239,7 @@ http://www.youtube.com/watch?v=D5V28l7FyHA:movie:h360
 --- input
 [http://example.com/:movie]
 --- expected
-<p><a href="http://example.com/" target="_blank" data-hatena-embed="movie" data-hatena-height="315" data-hatena-width="420">http://example.com/</a></p>
+<p><a href="http://example.com/" target="_blank" data-hatena-embed="movie">http://example.com/</a></p>
 
 
 === embed

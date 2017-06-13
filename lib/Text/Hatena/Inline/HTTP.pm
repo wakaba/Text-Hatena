@@ -206,17 +206,17 @@ sub movie_handler {
             $h = $1;
         }
     }
-    if ($w && $h) {
-    } elsif ($w && !$h) {
-        $h = int($w/4*3);
-    } elsif (!$w && $h) {
-        $w = int($h*4/3);
-    } else {
-        ($w, $h) = (420, 315);
-    }
     if ($context->{expand_movie}) {
         if ($uri =~ m{^https?://(?:jp|www)[.]youtube[.]com/watch[?]v=([\w\-]+)}) {
             my $code = $1;
+            if ($w && $h) {
+            } elsif ($w && !$h) {
+                $h = int($w/4*3);
+            } elsif (!$w && $h) {
+                $w = int($h*4/3);
+            } else {
+                ($w, $h) = (420, 315);
+            }
             return sprintf(
                 '<iframe width="%d" height="%d" src="https://www.youtube.com/embed/%s?wmode=transparent" frameborder="0" allowfullscreen></iframe>',
                 $w,
@@ -233,8 +233,8 @@ sub movie_handler {
     }
 
     my $attrs = ' data-hatena-embed="movie"';
-    $attrs .= ' data-hatena-width="'.escape_html($w).'"';
-    $attrs .= ' data-hatena-height="'.escape_html($h).'"';
+    $attrs .= ' data-hatena-width="'.escape_html($w).'"' if defined $w;
+    $attrs .= ' data-hatena-height="'.escape_html($h).'"' if defined $h;
 
     return sprintf(
         '<a href="%s"%s%s>%s</a>',
