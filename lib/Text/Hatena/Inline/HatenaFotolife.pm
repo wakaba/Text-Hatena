@@ -91,15 +91,26 @@ build_inlines {
                 return qq|<span itemscope itemtype="http://schema.org/Photograph">$anchor_or_img</span>|;
             }
         } elsif ($type =~ /movie/i) {
-            my $ret = <<EOD;
+            if ($context->{expand_movie}) {
+                my $ret = <<EOD;
 <object data="http://f.hatena.ne.jp/tools/flvplayer_s.swf" type="application/x-shockwave-flash" width="320" height="276">
 <param name="movie" value="http://f.hatena.ne.jp/tools/flvplayer_s.swf"></param>
 <param name="FlashVars" value="fotoid=$fid&user=$user"></param>
 <param name="wmode" value="transparent"></param>
 </object>
 EOD
-            $ret =~ s/\n//g; # Avoid <br> insertion
-            return $ret;
+                $ret =~ s/\n//g; # Avoid <br> insertion
+                return $ret;
+            } else {
+                return sprintf(
+                    '<a href="http://f.hatena.ne.jp/%s/%s"%s data-hatena-embed="movie">http://f.hatena.ne.jp/%s/%s</a>',
+                    $user,
+                    $fid,
+                    $link_target,
+                    $user,
+                    $fid,
+                );
+            }
         }
         return qq|<a href="http://f.hatena.ne.jp/$user/$fid"$link_target>$name</a>|;
     };

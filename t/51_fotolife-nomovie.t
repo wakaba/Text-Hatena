@@ -4,6 +4,7 @@ use warnings;
 use lib 't/lib';
 use Test::Most;
 use Text::Hatena::Test;
+$Text::Hatena::Test::options = { expand_movie => 0 };
 
 plan tests => 1 * blocks();
 
@@ -23,14 +24,9 @@ f:id:hatenadiary:20041007101545f:image
 
 === f:id:fid:movie
 --- input
-f:id:hatenadiary:20041007101545f:movie
+f:id:hatenafotolife:20081113192007f:movie
 --- expected
-<p><object data="http://f.hatena.ne.jp/tools/flvplayer_s.swf" type="application/x-shockwave-flash" width="320" height="276">
-<param name="movie" value="http://f.hatena.ne.jp/tools/flvplayer_s.swf"></param>
-<param name="FlashVars" value="fotoid=20041007101545&user=hatenadiary"></param>
-<param name="wmode" value="transparent"></param>
-</object>
-</p>
+<p><a data-hatena-embed="movie" href="http://f.hatena.ne.jp/hatenafotolife/20081113192007" target="_blank">http://f.hatena.ne.jp/hatenafotolife/20081113192007</a></p>
 
 === f:id
 --- input
@@ -152,14 +148,3 @@ f:id:hatenadiary:20041007101545j:plain:left
 f:id:hatenadiary:20041007101545j:plain:right,w50,h10
 --- expected
 <p><span itemscope itemtype="http://schema.org/Photograph"><img itemprop="image" src="https://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545.jpg" alt="f:id:hatenadiary:20041007101545j:plain:right,w50,h10" title="f:id:hatenadiary:20041007101545j:plain:right,w50,h10" class="hatena-fotolife hatena-image-right" style="width:50px;height:10px"></span></p>
-
-=== f:id:fid:movie
---- input
-f:id:hatenadiary:20041007101545f:movie
---- expected
-<p><object data="http://f.hatena.ne.jp/tools/flvplayer_s.swf" type="application/x-shockwave-flash" width="320" height="276">
-<param name="movie" value="http://f.hatena.ne.jp/tools/flvplayer_s.swf"></param>
-<param name="FlashVars" value="fotoid=20041007101545&user=hatenadiary"></param>
-<param name="wmode" value="transparent"></param>
-</object>
-</p>
