@@ -9,7 +9,17 @@ build_inlines {
     # [gist:___]
     syntax qr{\[gist:([0-9]+)\]}ix => sub {
         my ($context, $id) = @_;
-        return qq|<script src="https://gist.github.com/$id.js"></script>|;
+        if ($context->network_enabled) {
+            return qq|<script src="https://gist.github.com/$id.js"></script>|;
+        } else {
+            return sprintf(
+                '<a href="https://gist.github.com/%s"%s data-hatena-embed="">https://gist.github.com/%s</a>',
+                $id,
+                $context->link_target,
+                $id,
+            );
+
+        }
     };
 };
 
