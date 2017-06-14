@@ -31,3 +31,21 @@ __END__
 [asin:4086185156:detail]:
 --- expected
 <p><hatena-asin asin="4086185156" type="detail" target="_blank"></hatena-asin>:</p>
+
+=== ASIN: :detail
+--- input
+[ASIN:4086185156:detail]:
+--- expected
+<p><hatena-asin asin="4086185156" type="detail" target="_blank"></hatena-asin>:</p>
+
+=== ASIN: :detail
+--- input
+ASIN:4086185156:detail:
+--- expected
+<p><hatena-asin asin="4086185156" type="detail" target="_blank"></hatena-asin>:</p>
+
+=== NOTASIN: :detail
+--- input
+NOTASIN:4086185156:detail:
+--- expected
+<p>NOTASIN:4086185156:detail:</p>

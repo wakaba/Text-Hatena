@@ -22,6 +22,17 @@ build_inlines {
         $type = defined $type ? qq{ type="$type"} : '';
         return qq|<hatena-asin asin="$asin"$type$link_target></hatena-asin>|;
     };
+
+    # asin:___
+    syntax qr{
+      (?<![[:alnum:]])
+      asin:([0-9A-Za-z]+)(?::(detail)|)
+    }ix=> sub {
+        my ($context, $asin, $type) = @_;
+        my $link_target = $context->link_target;
+        $type = defined $type ? qq{ type="$type"} : '';
+        return qq|<hatena-asin asin="$asin"$type$link_target></hatena-asin>|;
+    };
 };
 
 1;
