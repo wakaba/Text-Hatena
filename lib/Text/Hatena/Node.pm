@@ -41,6 +41,7 @@ sub as_html {
 ## NOT COMPATIBLE WITH Hatena Syntax: Auto br insertation as \n
 sub as_html_paragraph {
     my ($self, $context, $text, %opts) = @_;
+    $text =~ s/\n+\z//;
     $text = $context->inline->format($text, $context);
 
     if ($opts{stopp}) {

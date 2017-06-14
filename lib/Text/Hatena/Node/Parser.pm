@@ -82,8 +82,6 @@ sub text {
                 } else {
                     join("<br />\n", split /\n/, $_, -1);
                 }
-            } grep {
-                $_ ne "\n";
             } split /(\n\n+)/, $text
         );
     }
