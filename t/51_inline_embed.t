@@ -32,6 +32,8 @@ __END__
 <p><script src="https://gist.github.com/1833407.js"></script></p>
 
 === tweet lang
+--- skip
+#XXX
 --- input
 [tweet https://twitter.com/Nintendo/status/172278808970412032 lang='ja']
 --- expected
