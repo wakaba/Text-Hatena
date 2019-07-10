@@ -57,6 +57,7 @@ our $INLINES = build_inlines {
     enable 'Contents';
     enable 'Presentation';
     enable 'File';
+    enable 'Task';
 };
 
 sub new {

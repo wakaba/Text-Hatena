@@ -23,6 +23,12 @@ Text::Hatena - The new "Text-to-HTML converter" with Hatena syntax.
 
 Text::Hatena is a text-to-html converter.
 
+Use of this module is B<DEPRECATED> unless you are trying to interpret
+data written in Hatena syntax.  You should not generate new data in
+Hatena syntax, as there is no formal syntax and semantics definition
+of the language, which results in the current poor interoprability
+situation.
+
 =head1 METHODS
 
 =over 4
@@ -120,10 +126,9 @@ The main text of the footnote.
 
 This module is expected to be compatible with Hatena Blog, although
 some features of the Hatena syntax as implemented by Hatena Blog are
-not supported (yet).  Various extensions implemented by Hatena Group
-are also supported (except for C<bbs:>
-<http://g.hatena.ne.jp/help#syntaxbbs> and C<task:>
-C<http://g.hatena.ne.jp/help#tasksyntax>, for now).
+not supported (yet).  Various extensions implemented by Hatena Group,
+except for C<bbs:> <http://g.hatena.ne.jp/help#syntaxbbs>, are also
+supported.
 
 Generating exactly same HTML output as Hatena Blog or any other Hatena
 product is I<not> a goal of the module, however.
@@ -324,7 +329,7 @@ L<Text::Xatena>
 
 Copyright (c) 2013 by L<cho45 <cho45@lowreal.net>>.
 
-Copyright 2017 Wakaba <wakaba@suikawiki.org>.
+Copyright 2017-2019 Wakaba <wakaba@suikawiki.org>.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
